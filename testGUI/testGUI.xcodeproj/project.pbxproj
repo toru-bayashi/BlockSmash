@@ -1,0 +1,226 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B108BFE1646D33600191147 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B108BFD1646D33600191147 /* GLUT.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6B108C021646D34300191147 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B108C011646D34300191147 /* Foundation.framework */; };
+		6B108C061646D35000191147 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B108C051646D35000191147 /* OpenGL.framework */; };
+		6B108CB21646D53200191147 /* window_top.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B108CB11646D53200191147 /* window_top.cpp */; };
+		6B239F3F1A2B6A3F007575D3 /* IngameView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B239F3D1A2B6A3F007575D3 /* IngameView.cpp */; };
+		6B239F421A2B6EE3007575D3 /* Ingame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B239F401A2B6EE3007575D3 /* Ingame.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B108BF21646D30B00191147 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B108BF51646D30B00191147 /* test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "test-Info.plist"; sourceTree = "<group>"; };
+		6B108BFD1646D33600191147 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
+		6B108C011646D34300191147 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		6B108C051646D35000191147 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		6B108CB01646D53200191147 /* window_top.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = window_top.h; sourceTree = "<group>"; };
+		6B108CB11646D53200191147 /* window_top.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = window_top.cpp; sourceTree = "<group>"; };
+		6B239F3D1A2B6A3F007575D3 /* IngameView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IngameView.cpp; sourceTree = "<group>"; };
+		6B239F3E1A2B6A3F007575D3 /* IngameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngameView.h; sourceTree = "<group>"; };
+		6B239F401A2B6EE3007575D3 /* Ingame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ingame.cpp; sourceTree = "<group>"; };
+		6B239F411A2B6EE3007575D3 /* Ingame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingame.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B108BF01646D30B00191147 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B108BFE1646D33600191147 /* GLUT.framework in Frameworks */,
+				6B108C021646D34300191147 /* Foundation.framework in Frameworks */,
+				6B108C061646D35000191147 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B108BE11646D2F300191147 = {
+			isa = PBXGroup;
+			children = (
+				6B108BF31646D30B00191147 /* Products */,
+				6B108BF51646D30B00191147 /* test-Info.plist */,
+				6B108BFD1646D33600191147 /* GLUT.framework */,
+				6B108C011646D34300191147 /* Foundation.framework */,
+				6B108C051646D35000191147 /* OpenGL.framework */,
+				6B108CB01646D53200191147 /* window_top.h */,
+				6B108CB11646D53200191147 /* window_top.cpp */,
+				6B239F411A2B6EE3007575D3 /* Ingame.h */,
+				6B239F401A2B6EE3007575D3 /* Ingame.cpp */,
+				6B239F3E1A2B6A3F007575D3 /* IngameView.h */,
+				6B239F3D1A2B6A3F007575D3 /* IngameView.cpp */,
+			);
+			sourceTree = "<group>";
+		};
+		6B108BF31646D30B00191147 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B108BF21646D30B00191147 /* test.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B108BF11646D30B00191147 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B108BF81646D30B00191147 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				6B108BEE1646D30B00191147 /* Resources */,
+				6B108BEF1646D30B00191147 /* Sources */,
+				6B108BF01646D30B00191147 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = 6B108BF21646D30B00191147 /* test.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B108BE31646D2F300191147 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 6B108BE61646D2F300191147 /* Build configuration list for PBXProject "testGUI" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 6B108BE11646D2F300191147;
+			productRefGroup = 6B108BF31646D30B00191147 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B108BF11646D30B00191147 /* test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B108BEE1646D30B00191147 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B108BEF1646D30B00191147 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B108CB21646D53200191147 /* window_top.cpp in Sources */,
+				6B239F3F1A2B6A3F007575D3 /* IngameView.cpp in Sources */,
+				6B239F421A2B6EE3007575D3 /* Ingame.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6B108BE41646D2F300191147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		6B108BE51646D2F300191147 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		6B108BF61646D30B00191147 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "test-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = test;
+			};
+			name = Debug;
+		};
+		6B108BF71646D30B00191147 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "test-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = test;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B108BE61646D2F300191147 /* Build configuration list for PBXProject "testGUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B108BE41646D2F300191147 /* Debug */,
+				6B108BE51646D2F300191147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B108BF81646D30B00191147 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B108BF61646D30B00191147 /* Debug */,
+				6B108BF71646D30B00191147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B108BE31646D2F300191147 /* Project object */;
+}

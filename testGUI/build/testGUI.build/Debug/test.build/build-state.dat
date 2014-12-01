@@ -1,0 +1,159 @@
+Ttest
+v7
+r0
+t373740865.825284
+cCheck dependencies
+cProcessInfoPlistFile /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/Info.plist test-Info.plist
+cCompileC build/testGUI.build/Debug/test.build/Objects-normal/i386/window_top.o /Users/wakabayashitooru/prg/Xcode/testGUI/window_top.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cLd /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/MacOS/test normal i386
+cTouch /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004E5656FF0000000000B38E90
+t1314281215
+s11767440
+
+N/System/Library/Frameworks/GLUT.framework/GLUT
+c000000004B5FAB1A00000000001A2920
+t1264560922
+s1714464
+
+N/System/Library/Frameworks/GLUT.framework/Headers/glut.h
+c000000004A124745000000000000578C
+t1242711877
+s22412
+
+N/System/Library/Frameworks/OpenGL.framework/OpenGL
+c000000004EDEBFD00000000000043360
+t1323220944
+s275296
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app
+t1352048065
+s102
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/Info.plist
+t1352047875
+s1212
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/MacOS/test
+t1352048065
+s9276
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/PkgInfo
+t1352047875
+s8
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/Objects-normal/i386/main.o
+t1352047875
+s2916
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/Objects-normal/i386/test.LinkFileList
+c0000000050969DC10000000000000070
+t1352048065
+s112
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/Objects-normal/i386/toppage.o
+t2
+s0
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/Objects-normal/i386/window_top.o
+t1352048065
+s2928
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/main.cpp
+c0000000050969CFE0000000000000160
+t1352047870
+s352
+i"main.h"
+i<GLUT/GLUT.h>
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/main.h
+c0000000050969CDB0000000000000087
+t1352047835
+s135
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/toppage.cpp
+c0000000050969CFE0000000000000160
+t1352047870
+s352
+i"main.h"
+i<GLUT/GLUT.h>
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/window_top.cpp
+c0000000050969DC0000000000000016C
+t1352048064
+s364
+i"window_top.h"
+i<GLUT/GLUT.h>
+
+N/Users/wakabayashitooru/prg/Xcode/testGUI/window_top.h
+c0000000050969DB2000000000000008D
+t1352048050
+s141
+
+Ntest-Info.plist
+c0000000050969B8B000000000000037F
+t1352047499
+s895
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies373740865#373740865#0(0"0(0#1#0"8608005120#0"0#
+
+CCompileC build/testGUI.build/Debug/test.build/Objects-normal/i386/main.o /Users/wakabayashitooru/prg/Xcode/testGUI/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s373740675.383614
+e373740675.476317
+r1
+xCompileC
+xbuild/testGUI.build/Debug/test.build/Objects-normal/i386/main.o
+x/Users/wakabayashitooru/prg/Xcode/testGUI/main.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@58"Compile /Users/wakabayashitooru/prg/Xcode/testGUI/main.cpp373740675#373740675#0(0"0(0#0#50"/Users/wakabayashitooru/prg/Xcode/testGUI/main.cpp8611560416#1186"    cd /Users/wakabayashitooru/prg/Xcode/testGUI    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/test-generated-files.hmap -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/test-own-target-headers.hmap -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/test-all-target-headers.hmap -iquote /Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/test-project-headers.hmap -F/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/include -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/DerivedSources/i386 -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/DerivedSources -c /Users/wakabayashitooru/prg/Xcode/testGUI/main.cpp -o /Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/Objects-normal/i386/main.o0#
+
+CCompileC build/testGUI.build/Debug/test.build/Objects-normal/i386/toppage.o /Users/wakabayashitooru/prg/Xcode/testGUI/toppage.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/testGUI.build/Debug/test.build/Objects-normal/i386/window_top.o /Users/wakabayashitooru/prg/Xcode/testGUI/window_top.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s373740865.693197
+e373740865.758417
+r1
+xCompileC
+xbuild/testGUI.build/Debug/test.build/Objects-normal/i386/window_top.o
+x/Users/wakabayashitooru/prg/Xcode/testGUI/window_top.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@64"Compile /Users/wakabayashitooru/prg/Xcode/testGUI/window_top.cpp373740865#373740865#0(0"0(0#0#56"/Users/wakabayashitooru/prg/Xcode/testGUI/window_top.cpp8026661835131271168#1198"    cd /Users/wakabayashitooru/prg/Xcode/testGUI    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mfix-and-continue -fvisibility-inlines-hidden -gdwarf-2 -iquote /Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/test-generated-files.hmap -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/test-own-target-headers.hmap -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/test-all-target-headers.hmap -iquote /Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/test-project-headers.hmap -F/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/include -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/DerivedSources/i386 -I/Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/DerivedSources -c /Users/wakabayashitooru/prg/Xcode/testGUI/window_top.cpp -o /Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/Objects-normal/i386/window_top.o0#
+
+CLd /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/MacOS/test normal i386
+s373740865.758510
+e373740865.822349
+r1
+xLd
+x/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/MacOS/test
+xnormal
+xi386
+lSLF07#2@87"Link /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/MacOS/test373740865#373740865#0(0"0(0#0#0"8612556384#512"    cd /Users/wakabayashitooru/prg/Xcode/testGUI    /Developer/usr/bin/g++-4.2 -arch i386 -L/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug -F/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug -filelist /Users/wakabayashitooru/prg/Xcode/testGUI/build/testGUI.build/Debug/test.build/Objects-normal/i386/test.LinkFileList -framework Foundation -framework AppKit -framework GLUT -framework Foundation -framework OpenGL -o /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/MacOS/test0#
+
+CProcessInfoPlistFile /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/Info.plist test-Info.plist
+s373740675.366758
+e373740675.383511
+r1
+xProcessInfoPlistFile
+x/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/Info.plist
+xtest-Info.plist
+lSLF07#2@23"Process test-Info.plist373740675#373740675#0(0"0(0#0#57"/Users/wakabayashitooru/prg/Xcode/testGUI/test-Info.plist8612467616#310"    cd /Users/wakabayashitooru/prg/Xcode/testGUI    builtin-infoPlistUtility test-Info.plist -genpkginfo /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app/Contents/Info.plist0#
+
+CTouch /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app
+s373740865.822441
+e373740865.825246
+r1
+xTouch
+x/Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app
+lSLF07#2@68"Touch /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app373740865#373740865#0(0"0(0#0#0"8612393536#134"    cd /Users/wakabayashitooru/prg/Xcode/testGUI    /usr/bin/touch -c /Users/wakabayashitooru/prg/Xcode/testGUI/build/Debug/test.app0#
+
