@@ -13,14 +13,13 @@
 
 class Paddle {
 private:
-    int size_w, size_h;
-    XYPoint left, right;
+    PointXY paddlePoint;
+    SizeWH paddleSize;
 public:
     Paddle();
-    Paddle(int ws, int hs);
+    Paddle(int, int);
     ~Paddle();
-    int getSizeW() const;
-    int getSizeH() const;
+    SizeWH getSize() const;
 };
 
 #endif /* defined(__testGUI__IngameView__) */

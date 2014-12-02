@@ -8,24 +8,25 @@
 
 #include "Ingame.h"
 
-XYPoint::XYPoint()
+Square::Square()
 {
-	posi_x = 0;
-	posi_y = 0;
+	size.w = 0;
+	size.h = 0;
 }
 
-void XYPoint::setPosition(int xp, int yp)
+Square::Square(int w, int h)
 {
-	posi_x = xp;
-	posi_y = yp;
+	size.w = w;
+	size.h = h;
 }
 
-int XYPoint::getPosX() const
+void Square::set2Size(int w, int h)
 {
-	return posi_x;
+	size.w = w;
+	size.h = h;
 }
 
-int XYPoint::getPosY() const
+SizeWH Square::get2Size() const
 {
-	return posi_y;
+	return size;
 }

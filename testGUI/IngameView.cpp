@@ -10,28 +10,23 @@
 
 Paddle::Paddle()
 {
-    size_w = 100;
-    size_h = 20;
-    left.setPosition(250, 100);
-    right.setPosition(350, 100);
+    paddleSize.w = 100;
+    paddleSize.h = 20;
+    paddlePoint.x = 250;
+    paddlePoint.y = 100;
 }
 
-Paddle::Paddle(int ws, int hs)
+Paddle::Paddle(int w, int h)
 {
-    size_w = ws;
-    size_h = hs;
+    paddleSize.w = w;
+    paddleSize.h = h;
 }
 
 Paddle::~Paddle()
 {
 }
 
-int Paddle::getSizeW() const
+SizeWH Paddle::getSize() const
 {
-    return size_w;
-}
-
-int Paddle::getSizeH() const
-{
-    return size_h;
+    return paddleSize;
 }

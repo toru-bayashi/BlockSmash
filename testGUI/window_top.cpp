@@ -73,11 +73,15 @@ void keyboard(unsigned char key, int x, int y)
     }
 }
 
+void draw(){
+    
+}
+
 void init(void)
 {
 //    static int padSizeW, padSizeH;
     // GL_COLOR_BUFFER_BITで塗りつぶす色を指定 1〜0
-    glClearColor(1.0, 1.0, 1.0, 1.0);
+    glClearColor(0.0, 0.0, 0.0, 0.0);
     
     // パドルのインスタンス化／描画
     Paddle* paddle = new Paddle(100, 20);
@@ -92,7 +96,7 @@ void init(void)
 int main (int argc, char * argv[]) {
     // 新たに開くウィンドウの位置、サイズを指定
     glutInitWindowPosition(100, 100);
-    glutInitWindowSize(640, 640);
+    glutInitWindowSize(WINDOWSIZE_W, WINDOWSIZE_H);
     
     // GLUT,OpenGL環境の初期化
     glutInit(&argc, argv);
