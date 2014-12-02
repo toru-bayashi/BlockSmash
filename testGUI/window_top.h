@@ -10,15 +10,7 @@
 #ifndef __testGUI__window_top__
 #define __testGUI__window_top__
 
-class XYPoint
-{
-private:
-	int posi_x, posi_y;
-public:
-	XYPoint();
-	void setPosition(int xp, int yp);
-	int getPosX() const;
-	int getPosY() const;
-};
+#define WINDOWSIZE_W 640
+#define WINDOWSIZE_H 640
 
 #endif /* defined(__testGUI__window_top__) */
