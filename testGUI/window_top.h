@@ -16,7 +16,7 @@
 void display(void);
 void resize(int, int);
 void keyboard(unsigned char, int, int);
-void draw();
+void render();
 void init(void);
 
 #endif /* defined(__testGUI__window_top__) */

@@ -25,16 +25,18 @@ protected:
     PointXY point;
     SizeWH size;
 public:
-	virtual void set2Size(int, int);
-    virtual SizeWH get2Size() const;
+	virtual void set2Size(int, int) = 0;
+    virtual SizeWH get2Size() const = 0;
 };
 
-class Square : Dimention2
+class Square : public Dimention2
 {
 private:
 public:
 	Square();
 	Square(int, int);
+	Square(Square const &);
+    ~Square(){}
 	void set2Size(int, int);
     SizeWH get2Size() const;
 };

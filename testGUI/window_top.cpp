@@ -24,26 +24,26 @@ void display(void){
     // ウィンドウを塗りつぶす　カラー、デプス、ステンシル、オーバーレイ等
     glClear(GL_COLOR_BUFFER_BIT);
     
-    // 図形描画開始　図形タイプ
-    glBegin(GL_POLYGON);
-    
-    glColor3d(0.5, 0.5, 0.5);
-    glVertex2d(-0.9, -0.9);
-    
-    glColor3d(1.0, 0.0, 0.0); /* red */
-    glVertex2d(-0.9, -0.9);
-    
-    glColor3d(0.0, 1.0, 0.0); /* green */
-    glVertex2d(0.9, -0.9);
-    
-    glColor3d(0.0, 0.0, 1.0); /* blue */
-    glVertex2d(0.9, 0.9);
-    
-    glColor3d(1.0, 1.0, 0.0); /* yellow */
-    glVertex2d(-0.9, 0.9);
-    
-    // 図形描画終了
-    glEnd();
+//    // 図形描画開始　図形タイプ
+//    glBegin(GL_POLYGON);
+//    
+//    glColor3d(0.5, 0.5, 0.5);
+//    glVertex2d(-0.9, -0.9);
+//    
+//    glColor3d(1.0, 0.0, 0.0); /* red */
+//    glVertex2d(-0.9, -0.9);
+//    
+//    glColor3d(0.0, 1.0, 0.0); /* green */
+//    glVertex2d(0.9, -0.9);
+//    
+//    glColor3d(0.0, 0.0, 1.0); /* blue */
+//    glVertex2d(0.9, 0.9);
+//    
+//    glColor3d(1.0, 1.0, 0.0); /* yellow */
+//    glVertex2d(-0.9, 0.9);
+//    
+//    // 図形描画終了
+//    glEnd();
     
     // 未実行のOpenGLの命令を全部実行
     glFlush();
@@ -73,8 +73,56 @@ void keyboard(unsigned char key, int x, int y)
     }
 }
 
-void draw(){
+void render(){
+    // -----VAO(Vertex Array Object)
+    GLuint VertexArrayID;
+
+#ifdef _WIN32
+    glGenVertexArrays(1, &VertexArrayID);
+    glBindVertexArray(VertexArrayID);
+#elif defined __APPLE__
+#ifdef TARGET_OS_MAC
+    glGenVertexArraysAPPLE(1, &VertexArrayID);
+    glBindVertexArrayAPPLE(VertexArrayID);
+#endif
+#endif
     
+    // -----スクリーン座標 (x,y,z) 原点：-1.0, -1.0, 0.0
+    static const GLfloat g_vertex_buffer_data[] = {
+        -1.0f, -1.0f, 0.0f,
+        1.0f, -1.0, 0.0f,
+        0.0f, 1.0f, 0.0f,
+    };
+    
+    // -----描画
+    // 頂点バッファを指し示すもの
+    GLuint vertexbuffer;
+    
+    // バッファを１つ作り、vertexbufferに結果IDを入れる
+    glGenBuffers(1, &vertexbuffer);
+    
+    // vertexbufferについて
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+    
+    // 頂点をOpenGLに渡す
+    glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+    
+    // 最初の属性バッファ：頂点
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+    glVertexAttribPointer(
+        0, // 属性0：0に特に理由ないが、シェーダ内のlayoutと合わせる必要がある
+        3, // サイズ
+        GL_FLOAT, // タイプ
+        GL_FALSE, // 正規化？
+        0, // ストライド
+        (void*)0 // 配列バッファオフセット
+        );
+    
+    // 三角形を描画
+    glDrawArrays(GL_TRIANGLES, 0, 3); // 頂点0から始まり、合計3つの頂点。→1つの三角形
+    
+    glDisableVertexAttribArray(0);
 }
 
 void init(void)
@@ -106,6 +154,8 @@ int main (int argc, char * argv[]) {
     
     // ウィンドウを開く　引数はタイトルバー等に表示される文字列
     glutCreateWindow("title");
+
+    render();
     
     // ウィンドウ内に描画／再描画を行われるときに実行する関数へのポインタを指定
     glutDisplayFunc(display);
@@ -118,7 +168,7 @@ int main (int argc, char * argv[]) {
     
     // 初期化処理
     init();
-    
+
     // イベントの待ち受け状態
     glutMainLoop();
 	
