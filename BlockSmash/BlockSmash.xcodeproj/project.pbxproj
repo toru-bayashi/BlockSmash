@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B21C7341A343BAB0088E8DD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B21C7331A343BAB0088E8DD /* Cocoa.framework */; };
+		6B21C73E1A343BAB0088E8DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B21C73C1A343BAB0088E8DD /* InfoPlist.strings */; };
+		6B21C7401A343BAB0088E8DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B21C73F1A343BAB0088E8DD /* main.m */; };
+		6B21C7441A343BAB0088E8DD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6B21C7421A343BAB0088E8DD /* Credits.rtf */; };
+		6B21C7471A343BAB0088E8DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B21C7461A343BAB0088E8DD /* AppDelegate.m */; };
+		6B21C74A1A343BAC0088E8DD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B21C7481A343BAC0088E8DD /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B21C7301A343BAB0088E8DD /* BlockSmash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockSmash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B21C7331A343BAB0088E8DD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6B21C7361A343BAB0088E8DD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6B21C7371A343BAB0088E8DD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6B21C7381A343BAB0088E8DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6B21C73B1A343BAB0088E8DD /* BlockSmash-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BlockSmash-Info.plist"; sourceTree = "<group>"; };
+		6B21C73D1A343BAB0088E8DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6B21C73F1A343BAB0088E8DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6B21C7411A343BAB0088E8DD /* BlockSmash-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BlockSmash-Prefix.pch"; sourceTree = "<group>"; };
+		6B21C7431A343BAB0088E8DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		6B21C7451A343BAB0088E8DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6B21C7461A343BAB0088E8DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6B21C7491A343BAC0088E8DD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B21C72D1A343BAB0088E8DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B21C7341A343BAB0088E8DD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B21C7271A343BAB0088E8DD = {
+			isa = PBXGroup;
+			children = (
+				6B21C7391A343BAB0088E8DD /* BlockSmash */,
+				6B21C7321A343BAB0088E8DD /* Frameworks */,
+				6B21C7311A343BAB0088E8DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B21C7311A343BAB0088E8DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B21C7301A343BAB0088E8DD /* BlockSmash.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B21C7321A343BAB0088E8DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B21C7331A343BAB0088E8DD /* Cocoa.framework */,
+				6B21C7351A343BAB0088E8DD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B21C7351A343BAB0088E8DD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B21C7361A343BAB0088E8DD /* AppKit.framework */,
+				6B21C7371A343BAB0088E8DD /* CoreData.framework */,
+				6B21C7381A343BAB0088E8DD /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6B21C7391A343BAB0088E8DD /* BlockSmash */ = {
+			isa = PBXGroup;
+			children = (
+				6B21C7451A343BAB0088E8DD /* AppDelegate.h */,
+				6B21C7461A343BAB0088E8DD /* AppDelegate.m */,
+				6B21C7481A343BAC0088E8DD /* MainMenu.xib */,
+				6B21C73A1A343BAB0088E8DD /* Supporting Files */,
+			);
+			path = BlockSmash;
+			sourceTree = "<group>";
+		};
+		6B21C73A1A343BAB0088E8DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B21C73B1A343BAB0088E8DD /* BlockSmash-Info.plist */,
+				6B21C73C1A343BAB0088E8DD /* InfoPlist.strings */,
+				6B21C73F1A343BAB0088E8DD /* main.m */,
+				6B21C7411A343BAB0088E8DD /* BlockSmash-Prefix.pch */,
+				6B21C7421A343BAB0088E8DD /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B21C72F1A343BAB0088E8DD /* BlockSmash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B21C74D1A343BAC0088E8DD /* Build configuration list for PBXNativeTarget "BlockSmash" */;
+			buildPhases = (
+				6B21C72C1A343BAB0088E8DD /* Sources */,
+				6B21C72D1A343BAB0088E8DD /* Frameworks */,
+				6B21C72E1A343BAB0088E8DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlockSmash;
+			productName = BlockSmash;
+			productReference = 6B21C7301A343BAB0088E8DD /* BlockSmash.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B21C7281A343BAB0088E8DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "toru-wakabayashi";
+			};
+			buildConfigurationList = 6B21C72B1A343BAB0088E8DD /* Build configuration list for PBXProject "BlockSmash" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6B21C7271A343BAB0088E8DD;
+			productRefGroup = 6B21C7311A343BAB0088E8DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B21C72F1A343BAB0088E8DD /* BlockSmash */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B21C72E1A343BAB0088E8DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B21C73E1A343BAB0088E8DD /* InfoPlist.strings in Resources */,
+				6B21C7441A343BAB0088E8DD /* Credits.rtf in Resources */,
+				6B21C74A1A343BAC0088E8DD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B21C72C1A343BAB0088E8DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B21C7401A343BAB0088E8DD /* main.m in Sources */,
+				6B21C7471A343BAB0088E8DD /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6B21C73C1A343BAB0088E8DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B21C73D1A343BAB0088E8DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6B21C7421A343BAB0088E8DD /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B21C7431A343BAB0088E8DD /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		6B21C7481A343BAC0088E8DD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B21C7491A343BAC0088E8DD /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B21C74B1A343BAC0088E8DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6B21C74C1A343BAC0088E8DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6B21C74E1A343BAC0088E8DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlockSmash/BlockSmash-Prefix.pch";
+				INFOPLIST_FILE = "BlockSmash/BlockSmash-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6B21C74F1A343BAC0088E8DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlockSmash/BlockSmash-Prefix.pch";
+				INFOPLIST_FILE = "BlockSmash/BlockSmash-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B21C72B1A343BAB0088E8DD /* Build configuration list for PBXProject "BlockSmash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B21C74B1A343BAC0088E8DD /* Debug */,
+				6B21C74C1A343BAC0088E8DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B21C74D1A343BAC0088E8DD /* Build configuration list for PBXNativeTarget "BlockSmash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B21C74E1A343BAC0088E8DD /* Debug */,
+				6B21C74F1A343BAC0088E8DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B21C7281A343BAB0088E8DD /* Project object */;
+}
