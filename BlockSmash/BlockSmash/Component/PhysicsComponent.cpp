@@ -7,3 +7,18 @@
 //
 
 #include "PhysicsComponent.h"
+
+bool PhysicsComponent::collisionDetection()
+{
+    return true;
+}
+
+void move()
+{
+    
+}
+
+bool isColliding()
+{
+    return true;
+}

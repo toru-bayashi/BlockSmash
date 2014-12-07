@@ -9,6 +9,12 @@
 #ifndef __BlockSmash__PhysicsComponent__
 #define __BlockSmash__PhysicsComponent__
 
-#include <iostream>
+class PhysicsComponent
+{
+public:
+    bool collisionDetection();
+    void move();
+    bool isColliding();
+};
 
 #endif /* defined(__BlockSmash__PhysicsComponent__) */

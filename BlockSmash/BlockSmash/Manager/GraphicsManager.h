@@ -9,6 +9,10 @@
 #ifndef __BlockSmash__GraphicsManager__
 #define __BlockSmash__GraphicsManager__
 
-#include <iostream>
+class GraphicsManager
+{
+public:
+    GraphicsManager();
+};
 
 #endif /* defined(__BlockSmash__GraphicsManager__) */

@@ -11,4 +11,21 @@
 
 #include <iostream>
 
+#include "GameManager.h"
+#include "SoundManager.h"
+#include "GraphicsManager.h"
+#include "TimeManager.h"
+
+namespace BSManager
+{
+    void management()
+    {
+        const GameManager *gameMan = new GameManager();
+        const SoundManager *soundMan = new SoundManager();
+        const GraphicsManager *graphicsMan = new GraphicsManager();
+        const TimeManager *timeMan = new TimeManager();
+        std::cout << "BSManager::management()" << std::endl;
+    }
+}
+
 #endif /* defined(__BlockSmash__BSManager__) */

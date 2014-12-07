@@ -7,3 +7,18 @@
 //
 
 #include "SoundComponent.h"
+
+void SoundComponent::playSE(int seID)
+{
+    
+}
+
+void SoundComponent::playBGM(int bgmID)
+{
+    
+}
+
+SoundComponent::SoundComponent()
+{
+    
+}

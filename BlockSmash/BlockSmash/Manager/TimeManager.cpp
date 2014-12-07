@@ -7,3 +7,8 @@
 //
 
 #include "TimeManager.h"
+
+TimeManager::TimeManager()
+{
+    
+}

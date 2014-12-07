@@ -6,4 +6,4 @@
 //  Copyright (c) 2014年 toru-wakabayashi. All rights reserved.
 //
 
-#include "BSManager.h"
+#include <iostream>

@@ -9,6 +9,10 @@
 #ifndef __BlockSmash__TimeManager__
 #define __BlockSmash__TimeManager__
 
-#include <iostream>
+class TimeManager
+{
+public:
+    TimeManager();
+};
 
 #endif /* defined(__BlockSmash__TimeManager__) */

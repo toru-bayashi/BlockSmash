@@ -15,12 +15,10 @@
 		6B2503F61A348AE30076F910 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2503F11A348AE30076F910 /* OpenAL.framework */; };
 		6B2503F71A348AE30076F910 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2503F21A348AE30076F910 /* OpenGL.framework */; };
 		6B25040A1A3492C80076F910 /* BSManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504081A3492C80076F910 /* BSManager.cpp */; };
-		6B25040D1A3492ED0076F910 /* GamaManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25040B1A3492ED0076F910 /* GamaManager.cpp */; };
+		6B25040D1A3492ED0076F910 /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25040B1A3492ED0076F910 /* GameManager.cpp */; };
 		6B2504101A3493010076F910 /* SoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25040E1A3493010076F910 /* SoundManager.cpp */; };
 		6B2504131A3493170076F910 /* GraphicsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504111A3493170076F910 /* GraphicsManager.cpp */; };
 		6B2504161A3493290076F910 /* TimeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504141A3493290076F910 /* TimeManager.cpp */; };
-		6B25041B1A3493870076F910 /* Load.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504191A3493870076F910 /* Load.cpp */; };
-		6B25041E1A3493B50076F910 /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25041C1A3493B50076F910 /* Math.cpp */; };
 		6B2504221A3493F00076F910 /* PhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504201A3493F00076F910 /* PhysicsComponent.cpp */; };
 		6B2504251A34940A0076F910 /* SoundComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504231A34940A0076F910 /* SoundComponent.cpp */; };
 		6B2504281A34942B0076F910 /* GraphicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504261A34942B0076F910 /* GraphicsComponent.cpp */; };
@@ -37,6 +35,7 @@
 		6B25044C1A3496E00076F910 /* Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25044A1A3496E00076F910 /* Stage.cpp */; };
 		6B25044F1A3496F70076F910 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25044D1A3496F70076F910 /* Item.cpp */; };
 		6B2504521A34970E0076F910 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504501A34970D0076F910 /* Player.cpp */; };
+		6BEE54D01A34A0FA007A14EB /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE54CE1A34A0FA007A14EB /* Utility.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,18 +62,14 @@
 		6B2503F21A348AE30076F910 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		6B2504081A3492C80076F910 /* BSManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BSManager.cpp; path = Manager/BSManager.cpp; sourceTree = "<group>"; };
 		6B2504091A3492C80076F910 /* BSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSManager.h; path = Manager/BSManager.h; sourceTree = "<group>"; };
-		6B25040B1A3492ED0076F910 /* GamaManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GamaManager.cpp; path = Manager/GamaManager.cpp; sourceTree = "<group>"; };
-		6B25040C1A3492ED0076F910 /* GamaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamaManager.h; path = Manager/GamaManager.h; sourceTree = "<group>"; };
+		6B25040B1A3492ED0076F910 /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameManager.cpp; path = Manager/GameManager.cpp; sourceTree = "<group>"; };
+		6B25040C1A3492ED0076F910 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameManager.h; path = Manager/GameManager.h; sourceTree = "<group>"; };
 		6B25040E1A3493010076F910 /* SoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoundManager.cpp; path = Manager/SoundManager.cpp; sourceTree = "<group>"; };
 		6B25040F1A3493010076F910 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundManager.h; path = Manager/SoundManager.h; sourceTree = "<group>"; };
 		6B2504111A3493170076F910 /* GraphicsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GraphicsManager.cpp; path = Manager/GraphicsManager.cpp; sourceTree = "<group>"; };
 		6B2504121A3493170076F910 /* GraphicsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphicsManager.h; path = Manager/GraphicsManager.h; sourceTree = "<group>"; };
 		6B2504141A3493290076F910 /* TimeManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TimeManager.cpp; path = Manager/TimeManager.cpp; sourceTree = "<group>"; };
 		6B2504151A3493290076F910 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeManager.h; path = Manager/TimeManager.h; sourceTree = "<group>"; };
-		6B2504191A3493870076F910 /* Load.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Load.cpp; path = Utility/Load.cpp; sourceTree = "<group>"; };
-		6B25041A1A3493870076F910 /* Load.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Load.h; path = Utility/Load.h; sourceTree = "<group>"; };
-		6B25041C1A3493B50076F910 /* Math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Math.cpp; path = Utility/Math.cpp; sourceTree = "<group>"; };
-		6B25041D1A3493B50076F910 /* Math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Math.h; path = Utility/Math.h; sourceTree = "<group>"; };
 		6B2504201A3493F00076F910 /* PhysicsComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PhysicsComponent.cpp; path = Component/PhysicsComponent.cpp; sourceTree = "<group>"; };
 		6B2504211A3493F00076F910 /* PhysicsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhysicsComponent.h; path = Component/PhysicsComponent.h; sourceTree = "<group>"; };
 		6B2504231A34940A0076F910 /* SoundComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoundComponent.cpp; path = Component/SoundComponent.cpp; sourceTree = "<group>"; };
@@ -107,6 +102,8 @@
 		6B25044E1A3496F70076F910 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Ingame/Object/Item.h; sourceTree = "<group>"; };
 		6B2504501A34970D0076F910 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = Ingame/Object/Player.cpp; sourceTree = "<group>"; };
 		6B2504511A34970D0076F910 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Ingame/Object/Player.h; sourceTree = "<group>"; };
+		6BEE54CE1A34A0FA007A14EB /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utility.cpp; path = Utility/Utility.cpp; sourceTree = "<group>"; };
+		6BEE54CF1A34A0FA007A14EB /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Utility/Utility.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +161,8 @@
 			children = (
 				6B2504081A3492C80076F910 /* BSManager.cpp */,
 				6B2504091A3492C80076F910 /* BSManager.h */,
-				6B25040B1A3492ED0076F910 /* GamaManager.cpp */,
-				6B25040C1A3492ED0076F910 /* GamaManager.h */,
+				6B25040B1A3492ED0076F910 /* GameManager.cpp */,
+				6B25040C1A3492ED0076F910 /* GameManager.h */,
 				6B25040E1A3493010076F910 /* SoundManager.cpp */,
 				6B25040F1A3493010076F910 /* SoundManager.h */,
 				6B2504111A3493170076F910 /* GraphicsManager.cpp */,
@@ -179,10 +176,8 @@
 		6B2504181A3493620076F910 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				6B2504191A3493870076F910 /* Load.cpp */,
-				6B25041A1A3493870076F910 /* Load.h */,
-				6B25041C1A3493B50076F910 /* Math.cpp */,
-				6B25041D1A3493B50076F910 /* Math.h */,
+				6BEE54CE1A34A0FA007A14EB /* Utility.cpp */,
+				6BEE54CF1A34A0FA007A14EB /* Utility.h */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -302,12 +297,10 @@
 			files = (
 				6B2503E61A348AAD0076F910 /* main.cpp in Sources */,
 				6B25040A1A3492C80076F910 /* BSManager.cpp in Sources */,
-				6B25040D1A3492ED0076F910 /* GamaManager.cpp in Sources */,
+				6B25040D1A3492ED0076F910 /* GameManager.cpp in Sources */,
 				6B2504101A3493010076F910 /* SoundManager.cpp in Sources */,
 				6B2504131A3493170076F910 /* GraphicsManager.cpp in Sources */,
 				6B2504161A3493290076F910 /* TimeManager.cpp in Sources */,
-				6B25041B1A3493870076F910 /* Load.cpp in Sources */,
-				6B25041E1A3493B50076F910 /* Math.cpp in Sources */,
 				6B2504221A3493F00076F910 /* PhysicsComponent.cpp in Sources */,
 				6B2504251A34940A0076F910 /* SoundComponent.cpp in Sources */,
 				6B2504281A34942B0076F910 /* GraphicsComponent.cpp in Sources */,
@@ -324,6 +317,7 @@
 				6B25044C1A3496E00076F910 /* Stage.cpp in Sources */,
 				6B25044F1A3496F70076F910 /* Item.cpp in Sources */,
 				6B2504521A34970E0076F910 /* Player.cpp in Sources */,
+				6BEE54D01A34A0FA007A14EB /* Utility.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +414,7 @@
 				6B2503ED1A348AAD0076F910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
