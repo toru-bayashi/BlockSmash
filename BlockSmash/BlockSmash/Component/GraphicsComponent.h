@@ -9,6 +9,12 @@
 #ifndef __BlockSmash__GraphicsComponent__
 #define __BlockSmash__GraphicsComponent__
 
-#include <iostream>
+class GraphicsComponent
+{
+public:
+    GraphicsComponent();
+    
+private:
+};
 
 #endif /* defined(__BlockSmash__GraphicsComponent__) */

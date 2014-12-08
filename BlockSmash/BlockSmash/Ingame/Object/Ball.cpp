@@ -7,3 +7,13 @@
 //
 
 #include "Ball.h"
+
+Ball::Ball()
+{
+    m_graphicsComp = new GraphicsComponent();
+    m_physicsComp = new PhysicsComponent();
+    m_soundComp = new SoundComponent();
+    
+    m_speed = 1;
+    m_power = 1;
+}

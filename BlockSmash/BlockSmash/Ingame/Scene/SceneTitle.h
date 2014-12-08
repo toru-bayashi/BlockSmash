@@ -9,6 +9,15 @@
 #ifndef __BlockSmash__SceneTitle__
 #define __BlockSmash__SceneTitle__
 
+#include "Scene.h"
 #include <iostream>
+
+class SceneTitle : virtual public Scene
+{
+public:
+    SceneTitle();
+private:
+    
+};
 
 #endif /* defined(__BlockSmash__SceneTitle__) */

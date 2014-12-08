@@ -11,4 +11,14 @@
 
 #include <iostream>
 
+class Scene
+{
+public:
+    void initialize();
+    void finalize();
+    Scene();
+protected:
+    char *m_sceneName;
+};
+
 #endif /* defined(__BlockSmash__Scene__) */

@@ -7,3 +7,8 @@
 //
 
 #include "IngameObject.h"
+
+IngameObject::IngameObject()
+{
+    
+}

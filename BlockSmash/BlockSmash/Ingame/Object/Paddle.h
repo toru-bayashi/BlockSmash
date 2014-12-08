@@ -10,5 +10,14 @@
 #define __BlockSmash__Paddle__
 
 #include <iostream>
+#include "IngameObject.h"
+
+class Paddle : virtual public IngameObject
+{
+public:
+    Paddle();
+private:
+    int m_grade;
+};
 
 #endif /* defined(__BlockSmash__Paddle__) */

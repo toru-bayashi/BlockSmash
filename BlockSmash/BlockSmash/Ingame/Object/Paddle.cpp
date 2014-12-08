@@ -7,3 +7,8 @@
 //
 
 #include "Paddle.h"
+
+Paddle::Paddle()
+{
+    m_grade = 1;
+}

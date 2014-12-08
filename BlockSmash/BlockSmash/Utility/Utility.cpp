@@ -7,17 +7,3 @@
 //
 
 #include "Utility.h"
-
-namespace Utility
-{
-    void textureLoad()
-    {
-        
-    }
-    
-    void stageLoad()
-    {
-        
-    }
-    
-}

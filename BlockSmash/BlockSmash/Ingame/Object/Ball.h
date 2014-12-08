@@ -10,5 +10,15 @@
 #define __BlockSmash__Ball__
 
 #include <iostream>
+#include "IngameObject.h"
+
+class Ball : virtual public IngameObject
+{
+public:
+    Ball();
+private:
+    int m_speed;
+    int m_power;
+};
 
 #endif /* defined(__BlockSmash__Ball__) */

@@ -7,3 +7,18 @@
 //
 
 #include "Scene.h"
+
+void Scene::initialize()
+{
+    
+}
+
+void Scene::finalize()
+{
+    
+}
+
+Scene::Scene()
+{
+    
+}

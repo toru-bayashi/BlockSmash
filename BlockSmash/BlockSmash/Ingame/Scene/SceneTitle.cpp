@@ -7,3 +7,8 @@
 //
 
 #include "SceneTitle.h"
+
+SceneTitle::SceneTitle()
+{
+    m_sceneName = (char *)"Title";
+}

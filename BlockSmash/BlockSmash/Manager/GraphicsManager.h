@@ -12,6 +12,7 @@
 class GraphicsManager
 {
 public:
+    void graphicsInitialize();
     GraphicsManager();
 };
 

@@ -12,3 +12,9 @@ GraphicsManager::GraphicsManager()
 {
     
 }
+
+void GraphicsManager::graphicsInitialize()
+{
+
+}
+

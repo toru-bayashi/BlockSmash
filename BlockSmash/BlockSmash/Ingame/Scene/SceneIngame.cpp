@@ -7,3 +7,9 @@
 //
 
 #include "SceneIngame.h"
+
+SceneIngame::SceneIngame()
+{
+    m_sceneName = (char *)"BlockSmash";
+    
+}
