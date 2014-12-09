@@ -7,3 +7,8 @@
 //
 
 #include "SceneGameOver.h"
+
+SceneGameOver::SceneGameOver()
+{
+    m_sceneName = (char *)"GameOver";
+}

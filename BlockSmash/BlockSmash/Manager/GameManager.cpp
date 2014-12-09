@@ -9,20 +9,27 @@
 
 GameManager::GameManager()
 {
-    m_sceneID = SCENE_TITLE;
+    // ゲーム全体の各シーンオブジェクトを実体化
+    m_sceneID = Utility::SCENE_TITLE;
+    m_sceneTtl = new SceneTitle();
+    m_sceneIngm = new SceneIngame();
+    m_sceneStCl = new SceneStageClear();
+    m_sceneGmOv = new SceneGameOver();
+    
+    // 最初はタイトル画面を設定
     setScene(m_sceneID);
 }
 
-void GameManager::setScene(SCENE_TYPE sceneID)
+void GameManager::setScene(Utility::SCENE_TYPE sceneID)
 {
     switch (sceneID) {
-        case SCENE_TITLE:
+        case Utility::SCENE_TITLE:
             break;
-        case SCENE_INGAME:
+        case Utility::SCENE_INGAME:
             break;
-        case SCENE_GAMEOVER:
+        case Utility::SCENE_GAMEOVER:
             break;
-        case SCENE_STAGECLEAR:
+        case Utility::SCENE_STAGECLEAR:
             break;
         default:
             // exception error

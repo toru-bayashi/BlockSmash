@@ -9,7 +9,6 @@
 #ifndef __BlockSmash__Ball__
 #define __BlockSmash__Ball__
 
-#include <iostream>
 #include "IngameObject.h"
 
 class Ball : virtual public IngameObject

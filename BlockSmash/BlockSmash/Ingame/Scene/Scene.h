@@ -9,8 +9,6 @@
 #ifndef __BlockSmash__Scene__
 #define __BlockSmash__Scene__
 
-#include <iostream>
-
 class Scene
 {
 public:

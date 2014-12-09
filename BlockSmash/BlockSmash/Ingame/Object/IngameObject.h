@@ -9,7 +9,6 @@
 #ifndef __BlockSmash__IngameObject__
 #define __BlockSmash__IngameObject__
 
-#include <iostream>
 #include "PhysicsComponent.h"
 #include "SoundComponent.h"
 #include "GraphicsComponent.h"

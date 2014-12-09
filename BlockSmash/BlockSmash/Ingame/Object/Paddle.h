@@ -9,7 +9,6 @@
 #ifndef __BlockSmash__Paddle__
 #define __BlockSmash__Paddle__
 
-#include <iostream>
 #include "IngameObject.h"
 
 class Paddle : virtual public IngameObject

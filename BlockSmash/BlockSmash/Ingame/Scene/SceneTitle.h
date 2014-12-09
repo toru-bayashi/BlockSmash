@@ -10,7 +10,6 @@
 #define __BlockSmash__SceneTitle__
 
 #include "Scene.h"
-#include <iostream>
 
 class SceneTitle : virtual public Scene
 {

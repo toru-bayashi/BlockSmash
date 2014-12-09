@@ -15,6 +15,7 @@
 #ifdef TARGET_OS_MAC
 #include <GLUT/GLUT.h>
 #endif
+
 #endif
 
 #include <iostream>
@@ -26,7 +27,10 @@ using namespace std;
 void systemInitialize()
 {
     cout << "systemInitialize()" << endl;
-    BSManager::management();
+
+    // ブロック崩し管理オブジェクトを実体化
+    BSManager *bsMan;
+    bsMan = new BSManager();
 }
 
 void gameInitialize()

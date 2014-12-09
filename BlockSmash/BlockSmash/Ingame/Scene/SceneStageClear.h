@@ -9,6 +9,14 @@
 #ifndef __BlockSmash__SceneStageClear__
 #define __BlockSmash__SceneStageClear__
 
-#include <iostream>
+#include "Scene.h"
+
+class SceneStageClear : virtual public Scene
+{
+public:
+    SceneStageClear();
+private:
+    
+};
 
 #endif /* defined(__BlockSmash__SceneStageClear__) */

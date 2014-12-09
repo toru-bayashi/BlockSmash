@@ -9,6 +9,15 @@
 #ifndef __BlockSmash__SceneGameOver__
 #define __BlockSmash__SceneGameOver__
 
-#include <iostream>
+#include "Scene.h"
+
+class SceneGameOver : virtual public Scene
+{
+public:
+    SceneGameOver();
+private:
+    
+};
+
 
 #endif /* defined(__BlockSmash__SceneGameOver__) */

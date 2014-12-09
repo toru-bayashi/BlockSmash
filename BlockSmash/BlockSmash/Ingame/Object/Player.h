@@ -9,6 +9,5 @@
 #ifndef __BlockSmash__Player__
 #define __BlockSmash__Player__
 
-#include <iostream>
 
 #endif /* defined(__BlockSmash__Player__) */

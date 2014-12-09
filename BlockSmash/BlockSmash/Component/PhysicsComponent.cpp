@@ -13,12 +13,12 @@ bool PhysicsComponent::collisionDetection()
     return true;
 }
 
-void move()
+void PhysicsComponent::move()
 {
     
 }
 
-bool isColliding()
+bool PhysicsComponent::isColliding()
 {
     return true;
 }

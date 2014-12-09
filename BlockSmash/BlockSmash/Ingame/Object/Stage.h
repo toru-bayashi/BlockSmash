@@ -9,6 +9,5 @@
 #ifndef __BlockSmash__Stage__
 #define __BlockSmash__Stage__
 
-#include <iostream>
 
 #endif /* defined(__BlockSmash__Stage__) */

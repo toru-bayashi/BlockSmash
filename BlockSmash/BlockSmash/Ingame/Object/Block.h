@@ -9,6 +9,5 @@
 #ifndef __BlockSmash__Block__
 #define __BlockSmash__Block__
 
-#include <iostream>
 
 #endif /* defined(__BlockSmash__Block__) */

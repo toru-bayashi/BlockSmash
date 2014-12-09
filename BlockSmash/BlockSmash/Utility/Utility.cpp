@@ -7,3 +7,13 @@
 //
 
 #include "Utility.h"
+
+void Utility::textureLoad()
+{
+    
+}
+
+void Utility::stageLoad()
+{
+    
+}

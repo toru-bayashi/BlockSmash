@@ -10,7 +10,6 @@
 #define __BlockSmash__SceneIngame__
 
 #include "Scene.h"
-#include <iostream>
 
 class SceneIngame : virtual public Scene
 {

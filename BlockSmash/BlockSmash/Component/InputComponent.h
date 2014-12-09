@@ -9,6 +9,5 @@
 #ifndef __BlockSmash__InputComponent__
 #define __BlockSmash__InputComponent__
 
-#include <iostream>
 
 #endif /* defined(__BlockSmash__InputComponent__) */

@@ -7,3 +7,8 @@
 //
 
 #include "SceneStageClear.h"
+
+SceneStageClear::SceneStageClear()
+{
+    m_sceneName = (char *)"StageClear";
+}
