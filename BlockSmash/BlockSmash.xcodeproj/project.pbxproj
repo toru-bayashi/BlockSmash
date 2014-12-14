@@ -374,7 +374,12 @@
 		6B2503EC1A348AAD0076F910 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_VERSION = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/usr/local/include,
+					"/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/glm-0.9.4.0",
+				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -383,7 +388,12 @@
 		6B2503ED1A348AAD0076F910 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_VERSION = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					/usr/local/include,
+					"/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/glm-0.9.4.0",
+				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

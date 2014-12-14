@@ -22,8 +22,8 @@
 #define _STAGE_COUNT    1
 
 // ウィンドウサイズ
-#define _WINDOW_WIDTH   480
-#define _WINDOW_HEIGHT  640
+#define G_WINDOW_WIDTH   480
+#define G_WINDOW_HEIGHT  640
 
 
 namespace Utility
