@@ -7,3 +7,8 @@
 //
 
 #include "Player.h"
+
+Player::Player()
+{
+    m_life = 3;
+}

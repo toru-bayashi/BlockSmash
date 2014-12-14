@@ -8,6 +8,8 @@
 
 #ifndef __BlockSmash__GamaManager__
 #define __BlockSmash__GamaManager__
+
+#include <GLFW/glfw3.h>
 #include "Utility.h"
 #include "SceneTitle.h"
 #include "SceneIngame.h"
@@ -18,13 +20,16 @@ class GameManager
 {
 public:
     GameManager();
-    void setScene(Utility::SCENE_TYPE sceneID);
+    int startupWindow();
+    void standbyScene();
+    void breakScene();
     SceneTitle *m_sceneTtl;
     SceneIngame *m_sceneIngm;
     SceneStageClear *m_sceneStCl;
     SceneGameOver *m_sceneGmOv;
 private:
     Utility::SCENE_TYPE m_sceneID;
+    unsigned char **m_stageMap;
 };
 
 #endif /* defined(__BlockSmash__GamaManager__) */

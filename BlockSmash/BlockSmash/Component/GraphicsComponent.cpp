@@ -12,3 +12,13 @@ GraphicsComponent::GraphicsComponent()
 {
     
 }
+
+void GraphicsComponent::display()
+{
+    
+}
+
+void GraphicsComponent::render()
+{
+    
+}

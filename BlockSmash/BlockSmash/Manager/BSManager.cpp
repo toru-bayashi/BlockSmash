@@ -17,6 +17,14 @@ BSManager::BSManager()
     m_timeMan = new TimeManager();
 }
 
+BSManager::~BSManager()
+{
+    delete m_gameMan;
+    delete m_soundMan;
+    delete m_graphicsMan;
+    delete m_timeMan;
+}
+
 void BSManager::management()
 {
     std::cout << "BSManager::management()" << std::endl;

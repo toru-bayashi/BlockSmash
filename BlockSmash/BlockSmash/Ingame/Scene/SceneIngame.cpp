@@ -11,5 +11,26 @@
 SceneIngame::SceneIngame()
 {
     m_sceneName = (char *)"BlockSmash";
+}
+
+SceneIngame::~SceneIngame()
+{
+    sceneRemove();
+}
+
+// Ingameシーンを生成
+void SceneIngame::sceneMake()
+{
     
+}
+
+void SceneIngame::sceneRemove()
+{
+    
+}
+
+void SceneIngame::setStage(unsigned char **&stageMap)
+{
+    m_stage = new Stage();
+    m_stage->setStage(stageMap);
 }

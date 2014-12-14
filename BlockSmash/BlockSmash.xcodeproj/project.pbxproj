@@ -29,12 +29,12 @@
 		6B2504391A3496310076F910 /* SceneStageClear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504371A3496310076F910 /* SceneStageClear.cpp */; };
 		6B25043C1A3496470076F910 /* SceneGameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25043A1A3496470076F910 /* SceneGameOver.cpp */; };
 		6B2504401A34967D0076F910 /* IngameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25043E1A34967D0076F910 /* IngameObject.cpp */; };
-		6B2504431A34969C0076F910 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504411A34969B0076F910 /* Ball.cpp */; };
-		6B2504461A3496B10076F910 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504441A3496B00076F910 /* Paddle.cpp */; };
-		6B2504491A3496C50076F910 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504471A3496C50076F910 /* Block.cpp */; };
-		6B25044C1A3496E00076F910 /* Stage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25044A1A3496E00076F910 /* Stage.cpp */; };
-		6B25044F1A3496F70076F910 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25044D1A3496F70076F910 /* Item.cpp */; };
 		6B2504521A34970E0076F910 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504501A34970D0076F910 /* Player.cpp */; };
+		6B3EFD5D1A3D8286008B6B6B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3EFD5C1A3D8286008B6B6B /* Cocoa.framework */; };
+		6B3EFD5F1A3D8291008B6B6B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3EFD5E1A3D8291008B6B6B /* IOKit.framework */; };
+		6B3EFD611A3D866A008B6B6B /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3EFD601A3D866A008B6B6B /* libglfw3.a */; };
+		6BA162561A3D986200B661D7 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA162551A3D986200B661D7 /* libGLEW.a */; };
+		6BA162581A3D9CA000B661D7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA162571A3D9CA000B661D7 /* CoreVideo.framework */; };
 		6BEE54D01A34A0FA007A14EB /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE54CE1A34A0FA007A14EB /* Utility.cpp */; };
 /* End PBXBuildFile section */
 
@@ -90,18 +90,13 @@
 		6B25043B1A3496470076F910 /* SceneGameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneGameOver.h; path = Ingame/Scene/SceneGameOver.h; sourceTree = "<group>"; };
 		6B25043E1A34967D0076F910 /* IngameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IngameObject.cpp; path = Ingame/Object/IngameObject.cpp; sourceTree = "<group>"; };
 		6B25043F1A34967D0076F910 /* IngameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngameObject.h; path = Ingame/Object/IngameObject.h; sourceTree = "<group>"; };
-		6B2504411A34969B0076F910 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = Ingame/Object/Ball.cpp; sourceTree = "<group>"; };
-		6B2504421A34969B0076F910 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = Ingame/Object/Ball.h; sourceTree = "<group>"; };
-		6B2504441A3496B00076F910 /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Paddle.cpp; path = Ingame/Object/Paddle.cpp; sourceTree = "<group>"; };
-		6B2504451A3496B00076F910 /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Paddle.h; path = Ingame/Object/Paddle.h; sourceTree = "<group>"; };
-		6B2504471A3496C50076F910 /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Block.cpp; path = Ingame/Object/Block.cpp; sourceTree = "<group>"; };
-		6B2504481A3496C50076F910 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Block.h; path = Ingame/Object/Block.h; sourceTree = "<group>"; };
-		6B25044A1A3496E00076F910 /* Stage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Stage.cpp; path = Ingame/Object/Stage.cpp; sourceTree = "<group>"; };
-		6B25044B1A3496E00076F910 /* Stage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stage.h; path = Ingame/Object/Stage.h; sourceTree = "<group>"; };
-		6B25044D1A3496F70076F910 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = Ingame/Object/Item.cpp; sourceTree = "<group>"; };
-		6B25044E1A3496F70076F910 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Ingame/Object/Item.h; sourceTree = "<group>"; };
 		6B2504501A34970D0076F910 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = Ingame/Object/Player.cpp; sourceTree = "<group>"; };
 		6B2504511A34970D0076F910 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Ingame/Object/Player.h; sourceTree = "<group>"; };
+		6B3EFD5C1A3D8286008B6B6B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6B3EFD5E1A3D8291008B6B6B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		6B3EFD601A3D866A008B6B6B /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
+		6BA162551A3D986200B661D7 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../usr/local/lib/libGLEW.a; sourceTree = "<group>"; };
+		6BA162571A3D9CA000B661D7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		6BEE54CE1A34A0FA007A14EB /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utility.cpp; path = Utility/Utility.cpp; sourceTree = "<group>"; };
 		6BEE54CF1A34A0FA007A14EB /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Utility/Utility.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,11 +106,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA162581A3D9CA000B661D7 /* CoreVideo.framework in Frameworks */,
+				6B3EFD5F1A3D8291008B6B6B /* IOKit.framework in Frameworks */,
+				6B3EFD5D1A3D8286008B6B6B /* Cocoa.framework in Frameworks */,
 				6B2503F31A348AE30076F910 /* Foundation.framework in Frameworks */,
 				6B2503F41A348AE30076F910 /* GLKit.framework in Frameworks */,
 				6B2503F51A348AE30076F910 /* GLUT.framework in Frameworks */,
 				6B2503F61A348AE30076F910 /* OpenAL.framework in Frameworks */,
 				6B2503F71A348AE30076F910 /* OpenGL.framework in Frameworks */,
+				6B3EFD611A3D866A008B6B6B /* libglfw3.a in Frameworks */,
+				6BA162561A3D986200B661D7 /* libGLEW.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +125,11 @@
 		6B2503D91A348AAC0076F910 = {
 			isa = PBXGroup;
 			children = (
+				6B3EFD601A3D866A008B6B6B /* libglfw3.a */,
+				6BA162551A3D986200B661D7 /* libGLEW.a */,
+				6BA162571A3D9CA000B661D7 /* CoreVideo.framework */,
+				6B3EFD5E1A3D8291008B6B6B /* IOKit.framework */,
+				6B3EFD5C1A3D8286008B6B6B /* Cocoa.framework */,
 				6B2503EE1A348AE30076F910 /* Foundation.framework */,
 				6B2503EF1A348AE30076F910 /* GLKit.framework */,
 				6B2503F01A348AE30076F910 /* GLUT.framework */,
@@ -228,16 +233,6 @@
 			children = (
 				6B25043E1A34967D0076F910 /* IngameObject.cpp */,
 				6B25043F1A34967D0076F910 /* IngameObject.h */,
-				6B2504411A34969B0076F910 /* Ball.cpp */,
-				6B2504421A34969B0076F910 /* Ball.h */,
-				6B2504441A3496B00076F910 /* Paddle.cpp */,
-				6B2504451A3496B00076F910 /* Paddle.h */,
-				6B2504471A3496C50076F910 /* Block.cpp */,
-				6B2504481A3496C50076F910 /* Block.h */,
-				6B25044A1A3496E00076F910 /* Stage.cpp */,
-				6B25044B1A3496E00076F910 /* Stage.h */,
-				6B25044D1A3496F70076F910 /* Item.cpp */,
-				6B25044E1A3496F70076F910 /* Item.h */,
 				6B2504501A34970D0076F910 /* Player.cpp */,
 				6B2504511A34970D0076F910 /* Player.h */,
 			);
@@ -311,11 +306,6 @@
 				6B2504391A3496310076F910 /* SceneStageClear.cpp in Sources */,
 				6B25043C1A3496470076F910 /* SceneGameOver.cpp in Sources */,
 				6B2504401A34967D0076F910 /* IngameObject.cpp in Sources */,
-				6B2504431A34969C0076F910 /* Ball.cpp in Sources */,
-				6B2504461A3496B10076F910 /* Paddle.cpp in Sources */,
-				6B2504491A3496C50076F910 /* Block.cpp in Sources */,
-				6B25044C1A3496E00076F910 /* Stage.cpp in Sources */,
-				6B25044F1A3496F70076F910 /* Item.cpp in Sources */,
 				6B2504521A34970E0076F910 /* Player.cpp in Sources */,
 				6BEE54D01A34A0FA007A14EB /* Utility.cpp in Sources */,
 			);
@@ -384,6 +374,8 @@
 		6B2503EC1A348AAD0076F910 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -391,6 +383,8 @@
 		6B2503ED1A348AAD0076F910 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

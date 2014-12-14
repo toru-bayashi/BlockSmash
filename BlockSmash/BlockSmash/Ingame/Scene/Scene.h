@@ -15,6 +15,8 @@ public:
     void initialize();
     void finalize();
     Scene();
+    virtual void sceneMake() = 0;
+    virtual void sceneRemove() = 0;
 protected:
     char *m_sceneName;
 };

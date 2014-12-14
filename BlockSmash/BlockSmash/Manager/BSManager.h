@@ -19,6 +19,7 @@
 class BSManager {
 public:
     BSManager();
+    ~BSManager();
     void management();
     GameManager *m_gameMan;
     SoundManager *m_soundMan;

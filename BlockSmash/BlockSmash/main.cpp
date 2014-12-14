@@ -8,18 +8,24 @@
 #ifdef _WIN32
 #pragma comment(linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"")
 #include <GL/glut.h>
+#include <GL/glfw.h>
 
 #elif defined __APPLE__
 #include "TargetConditionals.h"
 
 #ifdef TARGET_OS_MAC
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include <GLUT/GLUT.h>
+//#include "glm/glm.hpp"
+//using namespace glm;
 #endif
 
 #endif
 
 #include <iostream>
 #include "BSManager.h"
+#include "Utility.h"
 
 using namespace std;
 //using namespace BSManager;
@@ -81,18 +87,12 @@ void display(void)
 	glutSwapBuffers();
 }
 
-int main(int argc, char *argv[])
+int main()
 {
-    glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
-	glutInitWindowSize(800,800);//ウィンドウの画面の幅と高さを指定
-	glutInitWindowPosition(0, 0);//ウィンドウの場所を指定
-    glutCreateWindow("BlockSmash");//ウィンドウの名前
-	glClearColor( 0 , 0.7, 0, 1);//オセロ盤の色
-	gluOrtho2D(0, 800, 800,0);//座標系の設定
-	glutDisplayFunc(display);//描画関数を指定
-	glutMainLoop();
-
+    if( !glfwInit() ){
+        return -1;
+    }
+    
     systemInitialize();
     gameInitialize();
     

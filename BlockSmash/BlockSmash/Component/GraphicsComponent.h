@@ -9,11 +9,15 @@
 #ifndef __BlockSmash__GraphicsComponent__
 #define __BlockSmash__GraphicsComponent__
 
+#include <GLFW/glfw3.h>
+#include "Utility.h"
+
 class GraphicsComponent
 {
 public:
     GraphicsComponent();
-    
+    void display();
+    void render();
 private:
 };
 

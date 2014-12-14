@@ -14,6 +14,18 @@
 //const char *g_sceneGameoverName = "Gameover";
 //const char *g_sceneStageClearName = "StageClear";
 
+// ブロックの最大個数
+#define _BLOCK_WIDTH    15
+#define _BLOCK_HEIGHT   20
+
+// ステージ数
+#define _STAGE_COUNT    1
+
+// ウィンドウサイズ
+#define _WINDOW_WIDTH   480
+#define _WINDOW_HEIGHT  640
+
+
 namespace Utility
 {
     enum SE_SYSTEM
@@ -44,9 +56,16 @@ namespace Utility
         SCENE_STAGECLEAR,
         SCENE_GAMEOVER,
     };
+    
+    enum BLOCK_TYPE
+    {
+        BLOCK_NORMAL,
+        BLOCK_TOUGH,
+        BLOCK_UNBREAKABLE,
+    };
 
     void textureLoad();
-    void stageLoad();
+    unsigned char** stageLoad();
 }
 
 #endif /* defined(__BlockSmash__Utility__) */

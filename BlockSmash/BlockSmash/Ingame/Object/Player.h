@@ -11,3 +11,12 @@
 
 
 #endif /* defined(__BlockSmash__Player__) */
+
+class Player
+{
+public:
+    Player();
+    
+private:
+    int m_life;
+};
