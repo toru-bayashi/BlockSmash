@@ -30,6 +30,7 @@
 		6B25043C1A3496470076F910 /* SceneGameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25043A1A3496470076F910 /* SceneGameOver.cpp */; };
 		6B2504401A34967D0076F910 /* IngameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B25043E1A34967D0076F910 /* IngameObject.cpp */; };
 		6B2504521A34970E0076F910 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2504501A34970D0076F910 /* Player.cpp */; };
+		6B35E4791A40537E0031EF0C /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B35E4771A40537E0031EF0C /* shader.cpp */; };
 		6B3EFD5D1A3D8286008B6B6B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3EFD5C1A3D8286008B6B6B /* Cocoa.framework */; };
 		6B3EFD5F1A3D8291008B6B6B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3EFD5E1A3D8291008B6B6B /* IOKit.framework */; };
 		6B3EFD611A3D866A008B6B6B /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3EFD601A3D866A008B6B6B /* libglfw3.a */; };
@@ -92,6 +93,10 @@
 		6B25043F1A34967D0076F910 /* IngameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngameObject.h; path = Ingame/Object/IngameObject.h; sourceTree = "<group>"; };
 		6B2504501A34970D0076F910 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = Ingame/Object/Player.cpp; sourceTree = "<group>"; };
 		6B2504511A34970D0076F910 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Ingame/Object/Player.h; sourceTree = "<group>"; };
+		6B35E4771A40537E0031EF0C /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shader.cpp; path = Common/shader.cpp; sourceTree = "<group>"; };
+		6B35E4781A40537E0031EF0C /* shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = shader.hpp; path = Common/shader.hpp; sourceTree = "<group>"; };
+		6B35E47D1A405C1F0031EF0C /* SimpleFragmentShader.fragmentshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragmentShader.fragmentshader; sourceTree = "<group>"; };
+		6B35E47E1A405C1F0031EF0C /* SimpleVertexShader.vertexshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertexShader.vertexshader; sourceTree = "<group>"; };
 		6B3EFD5C1A3D8286008B6B6B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6B3EFD5E1A3D8291008B6B6B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		6B3EFD601A3D866A008B6B6B /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
@@ -151,6 +156,8 @@
 		6B2503E41A348AAD0076F910 /* BlockSmash */ = {
 			isa = PBXGroup;
 			children = (
+				6B35E47A1A40538D0031EF0C /* Shaders */,
+				6B35E4761A4052B60031EF0C /* Common */,
 				6B25042C1A3495540076F910 /* Ingame */,
 				6B25041F1A3493CA0076F910 /* Component */,
 				6B2504181A3493620076F910 /* Utility */,
@@ -239,6 +246,24 @@
 			name = Object;
 			sourceTree = "<group>";
 		};
+		6B35E4761A4052B60031EF0C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6B35E4771A40537E0031EF0C /* shader.cpp */,
+				6B35E4781A40537E0031EF0C /* shader.hpp */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		6B35E47A1A40538D0031EF0C /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				6B35E47D1A405C1F0031EF0C /* SimpleFragmentShader.fragmentshader */,
+				6B35E47E1A405C1F0031EF0C /* SimpleVertexShader.vertexshader */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,6 +333,7 @@
 				6B2504401A34967D0076F910 /* IngameObject.cpp in Sources */,
 				6B2504521A34970E0076F910 /* Player.cpp in Sources */,
 				6BEE54D01A34A0FA007A14EB /* Utility.cpp in Sources */,
+				6B35E4791A40537E0031EF0C /* shader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,9 +405,11 @@
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					/usr/local/include,
 					"/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/glm-0.9.4.0",
+					/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = build;
 			};
 			name = Debug;
 		};
@@ -393,9 +421,11 @@
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					/usr/local/include,
 					"/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/glm-0.9.4.0",
+					/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = build;
 			};
 			name = Release;
 		};

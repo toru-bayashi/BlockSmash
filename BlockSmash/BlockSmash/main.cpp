@@ -26,6 +26,7 @@ using namespace glm;
 #include <iostream>
 #include "BSManager.h"
 #include "Utility.h"
+#include "Common/shader.hpp"
 
 //using namespace std;
 //using namespace BSManager;
@@ -33,10 +34,6 @@ using namespace glm;
 void systemInitialize()
 {
     std::cout << "systemInitialize()" << std::endl;
-    
-    // ブロック崩し管理オブジェクトを実体化
-    BSManager *bsMan;
-    bsMan = new BSManager();
 }
 
 void gameInitialize()
@@ -87,19 +84,47 @@ void display(void)
 	glutSwapBuffers();
 }
 
+void drawSquare()
+{
+    static const GLfloat vtx4[] = {
+        -50.0f,  50.0f,
+        -50.0f, -50.0f,
+        50.0f, -50.0f,
+        50.0f,  50.0f,
+    };
+    
+    glVertexPointer(2, GL_FLOAT, 0, vtx4);
+    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glDrawArrays(GL_QUADS, 0, 4);
+    glDisableClientState(GL_VERTEX_ARRAY);
+}
+
+void render()
+{
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    
+    glPushMatrix();
+    glTranslatef( 320.0f, 240.0f, 0.0f );
+    drawSquare();
+    glPopMatrix();
+}
+
 int main()
 {
     if( !glfwInit() ){
         std::cout << "GLFWの初期化に失敗しました。n" << std::endl;
         return -1;
     }
-
+    
     glfwWindowHint(GLFW_SAMPLES, 4); // 4x アンチエイリアス
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // OpenGL3.3を使います。
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // MacOS用：必ずしも必要ではありません。
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // 古いOpenGLは使いません。
-    
+
     // Windowを開き、OpenGLコンテキストを作ります
     GLFWwindow* window; // (ソースコードではこの変数はグローバルです。)
     window = glfwCreateWindow(G_WINDOW_WIDTH, G_WINDOW_HEIGHT, "BlockSmash!", NULL, NULL);
@@ -119,8 +144,71 @@ int main()
     // 下でエスケープキーが押されるのを捉えるのを保証します。
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
     
+    glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
+    
+    // シェーダからGLSLプログラムを作りコンパイルする。
+    GLuint programID = LoadShaders( "/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/SimpleVertexShader.vertexshader", "/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/SimpleFragmentShader.fragmentshader" );
+    
+    // Get a handle for our buffers
+	GLuint vertexPosition_modelspaceID = glGetAttribLocation(programID, "vertexPosition_modelspace");
+
+//    // モニタとの同期
+//    glfwSwapInterval(1);
+    
+    // ブロック崩し管理オブジェクトを実体化------------------
+//    static BSManager *bsMan;
+//    bsMan = new BSManager();
+    
+//    glMatrixMode(GL_PROJECTION);
+//    glLoadIdentity();
+//    glOrtho(0.0f, G_WINDOW_WIDTH, 0.0f, G_WINDOW_HEIGHT, -1.0f, 1.0f);
+    
+    // VAO
+    GLuint VertexArrayID;
+    glGenVertexArrays(1, &VertexArrayID);
+    glBindVertexArray(VertexArrayID);
+    
+    // 3頂点を表す3つのベクトルの配列
+    static const GLfloat g_vertex_buffer_data[] = {
+        -1.0f, -1.0f, 0.0f,
+        1.0f, -1.0f, 0.0f,
+        0.0f,  1.0f, 0.0f,
+    };
+    
+    // これが頂点バッファを指し示すものとなります。
+    GLuint vertexbuffer;
+    // バッファを1つ作り、vertexbufferに結果IDを入れます。
+    glGenBuffers(1, &vertexbuffer);
+    // 次のコマンドは'vertexbuffer'バッファについてです。
+    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+    // 頂点をOpenGLに渡します。
+    glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+    
+    
     do{
-        // 何も描きません。チュートリアル2で会いましょう！
+        // ウィンドウ背景色を塗りつぶし
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        // シェーダを使う
+        glUseProgram(programID);
+        
+//        render();
+        
+        // 最初の属性バッファ：頂点
+        glEnableVertexAttribArray(vertexPosition_modelspaceID);
+        glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
+        glVertexAttribPointer(
+                              vertexPosition_modelspaceID,                  // シェーダ内のlayoutとあわせないといけません。
+                              3,                  // サイズ
+                              GL_FLOAT,           // タイプ
+                              GL_FALSE,           // 正規化？
+                              0,                  // ストライド
+                              (void*)0            // 配列バッファオフセット
+                              );
+        
+        // 三角形を描きます！
+        glDrawArrays(GL_TRIANGLES, 0, 3); // 頂点0から始まります。合計3つの頂点です。→1つの三角形です。
+        glDisableVertexAttribArray(vertexPosition_modelspaceID);
         
         // バッファをスワップする。
         glfwSwapBuffers(window);
@@ -130,7 +218,11 @@ int main()
     while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
           glfwWindowShouldClose(window) == 0 );
     
-//    systemInitialize();
+	// Cleanup VBO
+	glDeleteBuffers(1, &vertexbuffer);
+	glDeleteProgram(programID);
+
+    //    systemInitialize();
 //    gameInitialize();
 //    
 //    do{
@@ -140,4 +232,8 @@ int main()
 //    
 //    gameFinalize();
 //    systemFinalize();
+
+    glfwTerminate();
+    
+    return 0;
 }
