@@ -15,16 +15,26 @@
 //const char *g_sceneStageClearName = "StageClear";
 
 // ブロックの最大個数
-#define _BLOCK_WIDTH    15
-#define _BLOCK_HEIGHT   20
+#define G_BLOCK_COLUMN   15
+#define G_BLOCK_ROW      20
+
+// ブロックのサイズ
+#define G_BLOCK_WIDTH    64
+#define G_BLOCK_HEIGHT   16
+
+// パドルのサイズ
+#define G_PADDLE_WIDTH    96
+#define G_PADDLE_HEIGHT   16
 
 // ステージ数
-#define _STAGE_COUNT    1
+#define G_STAGE_COUNT    1
 
 // ウィンドウサイズ
 #define G_WINDOW_WIDTH   480
 #define G_WINDOW_HEIGHT  640
 
+// 円周率
+#define Pai 3.1415926
 
 namespace Utility
 {

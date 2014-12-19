@@ -18,8 +18,8 @@ unsigned char **Utility::stageLoad()
     unsigned char **blockMap = nullptr;
     
     // ステージのブロック配列を読み込む
-    for (int i=0; i<_STAGE_COUNT; ++i) {
-        for (int j=0; i<_BLOCK_WIDTH*_BLOCK_HEIGHT; ++j) {
+    for (int i=0; i<G_STAGE_COUNT; ++i) {
+        for (int j=0; i<G_BLOCK_WIDTH*G_BLOCK_HEIGHT; ++j) {
             blockMap[i][j] = (unsigned char)Utility::BLOCK_NORMAL;
         }
     }
