@@ -26,6 +26,9 @@
 #define G_PADDLE_WIDTH    96
 #define G_PADDLE_HEIGHT   16
 
+// ボールの真円比（480*640における真円比）
+#define G_BALL_CIRCULARITY_RATIO    1.33f
+
 // ステージ数
 #define G_STAGE_COUNT    1
 

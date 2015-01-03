@@ -193,53 +193,53 @@ int main()
 //        -1.0f,                                1.0f, 0.0f,
 //    };
 
-//    GLfloat g_block_vertex_buffer_data[(G_BLOCK_COLUMN)*(G_BLOCK_ROW)];
-    GLfloat g_block_vertex_buffer_data[2*2*18];
-    for (int i=0;i<2;++i)
+    GLfloat g_block_vertex_buffer_data[(G_BLOCK_COLUMN)*(G_BLOCK_ROW)*18];
+//    GLfloat g_block_vertex_buffer_data[2*2*18];
+    for (int i=0;i<G_BLOCK_ROW;++i)
     {
-        for (int j=0;j<2;++j)
+        for (int j=0;j<G_BLOCK_COLUMN;++j)
         {
             // 左下
-            g_block_vertex_buffer_data[i*18+0] = -1.0f;
-            g_block_vertex_buffer_data[i*18+1] =  1.0f - G_NORMALIZED_BLOCK_HEIGHTSIZE;
-            g_block_vertex_buffer_data[i*18+2] =  0.0f;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+0] = -1.0f;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+1] =  1.0f - G_NORMALIZED_BLOCK_HEIGHTSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+2] =  0.0f;
 
-            g_block_vertex_buffer_data[i*18+0] += j*G_NORMALIZED_BLOCK_WIDTHSIZE;
-            g_block_vertex_buffer_data[i*18+1] += i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+0] += j*G_NORMALIZED_BLOCK_WIDTHSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+1] -= i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
             
             // 右下
-            g_block_vertex_buffer_data[i*18+3] = -1.0f + G_NORMALIZED_BLOCK_WIDTHSIZE;
-            g_block_vertex_buffer_data[i*18+4] =  1.0f - G_NORMALIZED_BLOCK_HEIGHTSIZE;
-            g_block_vertex_buffer_data[i*18+5] =  0.0f;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+3] = -1.0f + G_NORMALIZED_BLOCK_WIDTHSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+4] =  1.0f - G_NORMALIZED_BLOCK_HEIGHTSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+5] =  0.0f;
 
-            g_block_vertex_buffer_data[i*18+3] += j*G_NORMALIZED_BLOCK_WIDTHSIZE;
-            g_block_vertex_buffer_data[i*18+4] += i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+3] += j*G_NORMALIZED_BLOCK_WIDTHSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+4] -= i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
             
             // 左上
-            g_block_vertex_buffer_data[i*18+6] = -1.0f;
-            g_block_vertex_buffer_data[i*18+7] =  1.0f;
-            g_block_vertex_buffer_data[i*18+8] =  0.0f;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+6] = -1.0f;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+7] =  1.0f;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+8] =  0.0f;
 
-            g_block_vertex_buffer_data[i*18+7] += j*G_NORMALIZED_BLOCK_WIDTHSIZE;
-            g_block_vertex_buffer_data[i*18+8] += i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+7] += j*G_NORMALIZED_BLOCK_WIDTHSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+8] -= i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
 
             // 右上
-            g_block_vertex_buffer_data[i*18+9]  = -1.0f + G_NORMALIZED_BLOCK_WIDTHSIZE;
-            g_block_vertex_buffer_data[i*18+10] =  1.0f;
-            g_block_vertex_buffer_data[i*18+11] =  0.0f;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+9]  = -1.0f + G_NORMALIZED_BLOCK_WIDTHSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+10] =  1.0f;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+11] =  0.0f;
 
-            g_block_vertex_buffer_data[i*18+9]  += j*G_NORMALIZED_BLOCK_WIDTHSIZE;
-            g_block_vertex_buffer_data[i*18+10] += i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+9]  += j*G_NORMALIZED_BLOCK_WIDTHSIZE;
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+10] -= i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
 
             // 右下コピー
-            g_block_vertex_buffer_data[i*18+12] = g_block_vertex_buffer_data[i*18+3];
-            g_block_vertex_buffer_data[i*18+13] = g_block_vertex_buffer_data[i*18+4];
-            g_block_vertex_buffer_data[i*18+14] = g_block_vertex_buffer_data[i*18+5];
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+12] = g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+3];
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+13] = g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+4];
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+14] = g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+5];
 
             // 左上コピー
-            g_block_vertex_buffer_data[i*18+15] = g_block_vertex_buffer_data[i*18+6];
-            g_block_vertex_buffer_data[i*18+16] = g_block_vertex_buffer_data[i*18+7];
-            g_block_vertex_buffer_data[i*18+17] = g_block_vertex_buffer_data[i*18+8];
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+15] = g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+6];
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+16] = g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+7];
+            g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+17] = g_block_vertex_buffer_data[(j+(G_BLOCK_COLUMN*i))*18+8];
         }
     };
 
@@ -251,32 +251,40 @@ int main()
     glBufferData(GL_ARRAY_BUFFER, sizeof(g_block_vertex_buffer_data), g_block_vertex_buffer_data, GL_STATIC_DRAW);
 
     // ブロックの色を指定------------------------色----
-    GLfloat g_block_color_buffer_data[][18] = {
+    GLfloat g_block_color_buffer_data[3][G_BLOCK_COLUMN*G_BLOCK_ROW*18];
+    for (int i=0; i<3; ++i)
+    {
+        switch (i)
         {
-            1.0f, 0.0f, 0.0f,
-            1.0f, 0.0f, 0.0f,
-            1.0f, 0.0f, 0.0f,
-            1.0f, 0.0f, 0.0f,
-            1.0f, 0.0f, 0.0f,
-            1.0f, 0.0f, 0.0f,
-        },
-        {
-            0.5f, 0.0f, 0.2f,
-            0.5f, 0.0f, 0.2f,
-            0.5f, 0.0f, 0.2f,
-            0.5f, 0.0f, 0.2f,
-            0.5f, 0.0f, 0.2f,
-            0.5f, 0.0f, 0.2f,
-        },
-        {
-            0.0f, 0.0f, 0.5f,
-            0.0f, 0.0f, 0.5f,
-            0.0f, 0.0f, 0.5f,
-            0.0f, 0.0f, 0.5f,
-            0.0f, 0.0f, 0.5f,
-            0.0f, 0.0f, 0.5f,
-        },
-    };
+        // 色１（耐久力３）
+        case 0:
+            for (int j=0; j<G_BLOCK_COLUMN*G_BLOCK_ROW*18; ++j)
+            {
+                g_block_color_buffer_data[i][j] = 1.0f;
+                g_block_color_buffer_data[i][++j] = 0.0f;
+                g_block_color_buffer_data[i][++j] = 0.0f;
+            }
+            break;
+        // 色２（耐久力２）
+        case 1:
+            for (int j=0; j<G_BLOCK_COLUMN*G_BLOCK_ROW*18; ++j)
+            {
+                g_block_color_buffer_data[i][j] = 0.5f;
+                g_block_color_buffer_data[i][++j] = 0.0f;
+                g_block_color_buffer_data[i][++j] = 0.2f;
+            }
+            break;
+        // 色３（耐久力１）
+        case 2:
+            for (int j=0; j<G_BLOCK_COLUMN*G_BLOCK_ROW*18; ++j)
+            {
+                g_block_color_buffer_data[i][j] = 0.3f;
+                g_block_color_buffer_data[i][++j] = 0.0f;
+                g_block_color_buffer_data[i][++j] = 0.3f;
+            }
+            break;
+        }
+    }
 
     // バッファオブジェクトへのハンドル
     GLuint block_color_buffer[3];
@@ -351,20 +359,21 @@ int main()
 //        g_ball_vertex_buffer_data[i*2+1] = radius * std::cos(angle) + 2.0f/G_WINDOW_HEIGHT;
 //    }
 
-    int div = 32;
+//    int div = 32;
+    int div = 8;
     GLfloat g_ball_vertex_buffer_data[div*3*3];
     int count = 0;
     float x = 0, y = -0.8, z = 0, radius = 0.03f;
     for (int i = 0; i < div; i++) {
         float theta1 = (float) (2.0f /div*i*Pai);
         float theta2 = (float) (2.0f /div*(i+1)*Pai);
-        g_ball_vertex_buffer_data[count++] = x*1.33f;
+        g_ball_vertex_buffer_data[count++] = x*G_BALL_CIRCULARITY_RATIO;
         g_ball_vertex_buffer_data[count++] = y;
         g_ball_vertex_buffer_data[count++] = z;
-        g_ball_vertex_buffer_data[count++] = ((float)cos((double)theta1)*radius+x)*1.33f;
+        g_ball_vertex_buffer_data[count++] = ((float)cos((double)theta1)*radius+x)*G_BALL_CIRCULARITY_RATIO;
         g_ball_vertex_buffer_data[count++] = (float)sin((double)theta1)*radius+y;
         g_ball_vertex_buffer_data[count++] = z;
-        g_ball_vertex_buffer_data[count++] = ((float)cos((double)theta2)*radius+x)*1.33f;
+        g_ball_vertex_buffer_data[count++] = ((float)cos((double)theta2)*radius+x)*G_BALL_CIRCULARITY_RATIO;
         g_ball_vertex_buffer_data[count++] = (float)sin((double)theta2)*radius+y;
         g_ball_vertex_buffer_data[count++] = z;
     }
@@ -433,7 +442,7 @@ int main()
                               (void*)0                      // 配列バッファオフセット
                               );
         // 三角形を描きます！
-        glDrawArrays(GL_TRIANGLES, 0, 3*2*2*2); // 頂点0から始まります。合計4つの頂点です。→1つの四角形です。
+        glDrawArrays(GL_TRIANGLES, 0, 3*2*G_BLOCK_COLUMN*G_BLOCK_ROW); // 頂点0から始まります。合計4つの頂点です。→1つの四角形です。
         glDisableVertexAttribArray(vertexPosition_modelspaceID);
         glDisableVertexAttribArray(vertexColorID);
         glBindVertexArray(0);
@@ -504,6 +513,7 @@ int main()
         GLfloat *ptr_ball = (GLfloat*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
         if(ptr_ball)
         {
+//            int size_ball = sizeof(ptr_ball);
             for(int i=0; i<sizeof(ptr_ball); ++i)
             {
                 ptr_ball[3*i+0] += ballmoved.x;
