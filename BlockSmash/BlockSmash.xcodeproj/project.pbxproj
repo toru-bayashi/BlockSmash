@@ -100,6 +100,7 @@
 		6B3EFD5C1A3D8286008B6B6B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6B3EFD5E1A3D8291008B6B6B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		6B3EFD601A3D866A008B6B6B /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
+		6B61B4D11A6C0FDF008B9D10 /* IncludeGLLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncludeGLLib.h; path = Utility/IncludeGLLib.h; sourceTree = "<group>"; };
 		6BA162551A3D986200B661D7 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../usr/local/lib/libGLEW.a; sourceTree = "<group>"; };
 		6BA162571A3D9CA000B661D7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		6BEE54CE1A34A0FA007A14EB /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utility.cpp; path = Utility/Utility.cpp; sourceTree = "<group>"; };
@@ -190,6 +191,7 @@
 			children = (
 				6BEE54CE1A34A0FA007A14EB /* Utility.cpp */,
 				6BEE54CF1A34A0FA007A14EB /* Utility.h */,
+				6B61B4D11A6C0FDF008B9D10 /* IncludeGLLib.h */,
 			);
 			name = Utility;
 			sourceTree = "<group>";

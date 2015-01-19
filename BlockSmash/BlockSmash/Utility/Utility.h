@@ -15,29 +15,29 @@
 //const char *g_sceneStageClearName = "StageClear";
 
 // ブロックの最大個数
-#define G_BLOCK_COLUMN   15
-#define G_BLOCK_ROW      20
+static int G_BLOCK_COLUMN = 15;
+static int G_BLOCK_ROW = 20;
 
 // ブロックのサイズ
-#define G_BLOCK_WIDTH    64
-#define G_BLOCK_HEIGHT   16
+static int G_BLOCK_WIDTH = 64;
+static int G_BLOCK_HEIGHT = 16;
 
 // パドルのサイズ
-#define G_PADDLE_WIDTH    96
-#define G_PADDLE_HEIGHT   16
+static int G_PADDLE_WIDTH = 96;
+static int G_PADDLE_HEIGHT = 16;
 
 // ボールの真円比（480*640における真円比）
-#define G_BALL_CIRCULARITY_RATIO    1.33f
+static float G_BALL_CIRCULARITY_RATIO = 1.33f;
 
 // ステージ数
-#define G_STAGE_COUNT    1
+static int G_STAGE_COUNT = 1;
 
 // ウィンドウサイズ
-#define G_WINDOW_WIDTH   480
-#define G_WINDOW_HEIGHT  640
+static int G_WINDOW_WIDTH = 480;
+static int G_WINDOW_HEIGHT = 640;
 
 // 円周率
-#define Pai 3.1415926
+static float Pai = 3.1415926;
 
 namespace Utility
 {
