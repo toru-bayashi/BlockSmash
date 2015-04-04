@@ -11,6 +11,7 @@
 
 #include <GLFW/glfw3.h>
 #include "Utility.h"
+#include "UtilityGL.h"
 #include "SceneTitle.h"
 #include "SceneIngame.h"
 #include "SceneStageClear.h"
@@ -20,7 +21,6 @@ class GameManager
 {
 public:
     GameManager();
-    int startupWindow();
     void standbyScene();
     void breakScene();
     SceneTitle *m_sceneTtl;

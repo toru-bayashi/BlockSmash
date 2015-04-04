@@ -6,8 +6,7 @@
 //  Copyright (c) 2014年 toru-wakabayashi. All rights reserved.
 //
 #include "IncludeGLLib.h"
-#include <iostream>
-#include <math.h>
+#include "Utility/IncludeStandard.h"
 #include "BSManager.h"
 #include "Utility.h"
 #include "Common/shader.hpp"
@@ -18,6 +17,8 @@ static float G_NORMALIZED_BLOCK_HEIGHTSIZE  =   ((2.0f/G_WINDOW_HEIGHT)*G_BLOCK_
 static float G_NORMALIZED_PADDLE_HEIGHTSIZE  =   ((2.0f/G_WINDOW_HEIGHT)*G_PADDLE_HEIGHT);
 
 static int G_CONFIGURED_TRIANGLE_BLOCK_VERTEXNUM = 3*2;
+static int G_COORDINATENUM_XYZ = 3;
+//static int G_BLOCK_VERTEXNUM = 4;
 
 //using namespace std;
 //using namespace BSManager;
@@ -30,7 +31,7 @@ float speed = 1.5f; // 3 units / second
 
 // ボールの移動量用
 glm::vec3 ballmoved(0,0,0);
-float ballspeed = 1.2f;
+float ballspeed = 0.5f;
 
 void systemInitialize()
 {
@@ -98,11 +99,23 @@ void ballMover()
 	lastTime_ball = currentTime_ball;
 }
 
-int main()
+GLuint arrayBufferHandling (const GLfloat *bufferData, unsigned int size)
+{
+    // バッファオブジェクトへのハンドル
+    GLuint bufferHandle;
+    // 頂点バッファオブジェクトを作成->頂点位置をバッファオブジェクト(OpenGL)に転送
+    glGenBuffers(1, &bufferHandle);
+    glBindBuffer(GL_ARRAY_BUFFER, bufferHandle);
+    glBufferData(GL_ARRAY_BUFFER, size, bufferData, GL_STATIC_DRAW);
+    
+    return bufferHandle;
+}
+
+int createWindow(int window_width, int window_height)
 {
     if( !glfwInit() ){
         std::cout << "GLFWの初期化に失敗しました。n" << std::endl;
-        return -1;
+        return EXIT_FAILURE;
     }
     
     glfwWindowHint(GLFW_SAMPLES, 4); // 4x アンチエイリアス
@@ -110,20 +123,20 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // MacOS用：必ずしも必要ではありません。
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // 古いOpenGLは使いません。
-
+    
     // Windowを開き、OpenGLコンテキストを作ります
-    window = glfwCreateWindow(G_WINDOW_WIDTH, G_WINDOW_HEIGHT, "BlockSmash!", NULL, NULL);
+    window = glfwCreateWindow(window_width, window_height, "BlockSmash!", NULL, NULL);
     if( window == NULL ){
         std::cout << "GLFWウィンドウのオープンに失敗しました。 もしIntelのGPUならば, 3.3に対応していません。チュートリアルのバージョン2.1を試してください。n" << std::endl;
         glfwTerminate();
-        return -1;
+        return EXIT_FAILURE;
     }
     glfwMakeContextCurrent(window); // GLEWを初期化する
-
+    
     glewExperimental=true; // コアプロファイルで必要となります。
     if (glewInit() != GLEW_OK) {
         std::cout << "GLEWの初期化に失敗しました。n" << std::endl;
-        return -1;
+        return EXIT_FAILURE;
     }
     
     // 下でエスケープキーが押されるのを捉えるのを保証します。
@@ -131,8 +144,22 @@ int main()
     
     glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
     
+    return 0;
+}
+
+int main()
+{
+    // ウィンドウの初期化
+    if(createWindow(G_WINDOW_WIDTH, G_WINDOW_HEIGHT))
+        return EXIT_FAILURE;
+
+    // ブロック崩し管理オブジェクトを実体化------------------
+//    static BSManager *bsMan;
+//    bsMan = new BSManager();
+    
     // シェーダからGLSLプログラムを作りコンパイルする。
     GLuint programID = LoadShaders( "/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/SimpleVertexShader.vertexshader", "/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/SimpleFragmentShader.fragmentshader" );
+//    GLuint programID = LoadShaders( "$(SRCROOT)/SimpleVertexShader.vertexshader", "$(SRCROOT)/SimpleFragmentShader.fragmentshader" );
 
 	// Get a handle for our "MVP" uniform
 	GLuint diffMat4ID = glGetUniformLocation(programID, "diffMat4");
@@ -149,11 +176,7 @@ int main()
 //    // モニタとの同期
 //    glfwSwapInterval(1);
     
-    // ブロック崩し管理オブジェクトを実体化------------------
-//    static BSManager *bsMan;
-//    bsMan = new BSManager();
-    
-//    glViewport(0, 0, (GLsizei)G_WINDOW_WIDTH, (GLsizei)G_WINDOW_HEIGHT);
+//    glViewport(0, 0, G_WINDOW_WIDTH, G_WINDOW_HEIGHT);
 //    glMatrixMode(GL_PROJECTION);
 //    glLoadIdentity();
 //    glOrtho(0.0f, G_WINDOW_WIDTH, 0.0f, G_WINDOW_HEIGHT, -1.0f, 1.0f);
@@ -168,7 +191,7 @@ int main()
     glBindVertexArray(VertexArrayID[0]);
     
     // ブロックの頂点位置のバッファ-------------------------位置----    
-    static const int blockVertexNum = (G_BLOCK_COLUMN)*(G_BLOCK_ROW)*12;
+    static const int blockVertexNum = (G_BLOCK_COLUMN)*(G_BLOCK_ROW)*(G_CONFIGURED_TRIANGLE_BLOCK_VERTEXNUM)*(G_COORDINATENUM_XYZ);
     static const float baseBlockUnderY = 1.0f - G_NORMALIZED_BLOCK_HEIGHTSIZE;
     static const float baseBlockRightX = -1.0f + G_NORMALIZED_BLOCK_WIDTHSIZE;
     GLfloat g_block_vertex_buffer_data[blockVertexNum];
@@ -176,60 +199,44 @@ int main()
     {
         for (int j=0;j<G_BLOCK_COLUMN;++j)
         {
-            const int startIndex = (j+(G_BLOCK_COLUMN*i))*12;
+            const int startIndex = (j+(G_BLOCK_COLUMN*i))*(G_CONFIGURED_TRIANGLE_BLOCK_VERTEXNUM)*(G_COORDINATENUM_XYZ);
             const float currentBlockPositonX = j*G_NORMALIZED_BLOCK_WIDTHSIZE;
             const float currentBlockPositonY = i*G_NORMALIZED_BLOCK_HEIGHTSIZE;
             
             // 左下
-            g_block_vertex_buffer_data[startIndex+0] = -1.0f;
-            g_block_vertex_buffer_data[startIndex+1] =  baseBlockUnderY;
+            g_block_vertex_buffer_data[startIndex+0] = -1.0f            + currentBlockPositonX;
+            g_block_vertex_buffer_data[startIndex+1] =  baseBlockUnderY - currentBlockPositonY;
             g_block_vertex_buffer_data[startIndex+2] =  0.0f;
 
-            g_block_vertex_buffer_data[startIndex+0] += currentBlockPositonX;
-            g_block_vertex_buffer_data[startIndex+1] -= currentBlockPositonY;
-            
             // 右下
-            g_block_vertex_buffer_data[startIndex+3] =  baseBlockRightX;
-            g_block_vertex_buffer_data[startIndex+4] =  baseBlockUnderY;
+            g_block_vertex_buffer_data[startIndex+3] =  baseBlockRightX + currentBlockPositonX;
+            g_block_vertex_buffer_data[startIndex+4] =  baseBlockUnderY - currentBlockPositonY;
             g_block_vertex_buffer_data[startIndex+5] =  0.0f;
 
-            g_block_vertex_buffer_data[startIndex+3] += currentBlockPositonX;
-            g_block_vertex_buffer_data[startIndex+4] -= currentBlockPositonY;
-            
-            // 左上
-            g_block_vertex_buffer_data[startIndex+6] = -1.0f;
-            g_block_vertex_buffer_data[startIndex+7] =  1.0f;
+            // 右上
+            g_block_vertex_buffer_data[startIndex+6] =  baseBlockRightX + currentBlockPositonX;
+            g_block_vertex_buffer_data[startIndex+7] =  1.0f            - currentBlockPositonY;
             g_block_vertex_buffer_data[startIndex+8] =  0.0f;
 
-            g_block_vertex_buffer_data[startIndex+7] += currentBlockPositonX;
-            g_block_vertex_buffer_data[startIndex+8] -= currentBlockPositonY;
+            // 左上
+            g_block_vertex_buffer_data[startIndex+9]  = -1.0f + currentBlockPositonX;
+            g_block_vertex_buffer_data[startIndex+10] =  1.0f - currentBlockPositonY;
+            g_block_vertex_buffer_data[startIndex+11] =  0.0f;
+            
+            // 左下コピー
+            g_block_vertex_buffer_data[startIndex+12] = -1.0f            + currentBlockPositonX;
+            g_block_vertex_buffer_data[startIndex+13] =  baseBlockUnderY - currentBlockPositonY;
+            g_block_vertex_buffer_data[startIndex+14] =  0.0f;
 
             // 右上
-            g_block_vertex_buffer_data[startIndex+9]  = baseBlockRightX;
-            g_block_vertex_buffer_data[startIndex+10] =  1.0f;
-            g_block_vertex_buffer_data[startIndex+11] =  0.0f;
-
-            g_block_vertex_buffer_data[startIndex+9]  += currentBlockPositonX;
-            g_block_vertex_buffer_data[startIndex+10] -= currentBlockPositonY;
-
-//            // 右下コピー
-//            g_block_vertex_buffer_data[startIndex+12] = g_block_vertex_buffer_data[startIndex+3];
-//            g_block_vertex_buffer_data[startIndex+13] = g_block_vertex_buffer_data[startIndex+4];
-//            g_block_vertex_buffer_data[startIndex+14] = g_block_vertex_buffer_data[startIndex+5];
-//
-//            // 左上コピー
-//            g_block_vertex_buffer_data[startIndex+15] = g_block_vertex_buffer_data[startIndex+6];
-//            g_block_vertex_buffer_data[startIndex+16] = g_block_vertex_buffer_data[startIndex+7];
-//            g_block_vertex_buffer_data[startIndex+17] = g_block_vertex_buffer_data[startIndex+8];
+            g_block_vertex_buffer_data[startIndex+15] =  baseBlockRightX + currentBlockPositonX;
+            g_block_vertex_buffer_data[startIndex+16] =  1.0f            - currentBlockPositonY;
+            g_block_vertex_buffer_data[startIndex+17] =  0.0f;
         }
     };
 
     // バッファオブジェクトへのハンドル
-    GLuint block_position_buffer;
-    // 頂点バッファオブジェクトを作成->頂点位置をバッファオブジェクト(OpenGL)に転送
-    glGenBuffers(1, &block_position_buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, block_position_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_block_vertex_buffer_data), g_block_vertex_buffer_data, GL_STATIC_DRAW);
+    GLuint block_position_buffer = arrayBufferHandling(g_block_vertex_buffer_data, sizeof(g_block_vertex_buffer_data));
 
     // ブロックの色を指定------------------------色----
     enum BlockType
@@ -240,47 +247,69 @@ int main()
         BlockTypeMax
     };
         
-    GLfloat g_block_color_buffer_data[3][blockVertexNum];
-    for (int i=0; i<BlockTypeMax; ++i)
+    srand((unsigned int)time(NULL));
+    GLfloat g_block_color_buffer_data[blockVertexNum];
+    for (int j=0; j<blockVertexNum; ++j)
     {
-        float r = 0.f;
-        float g = 0.f;
-        float b = 0.f;
-        switch (i)
+        float r1 = 0.f;
+        float g1 = 0.f;
+        float b1 = 0.f;
+        float r2 = 0.f;
+        float g2 = 0.f;
+        float b2 = 0.f;
+        float r0 = 0.7f;
+        float g0 = 0.7f;
+        float b0 = 0.7f;
+        const int blockLevel = rand()%3;
+        switch (blockLevel)
         {
-        // 色１（耐久力３）
-        case Level1:
-                r = 1.f;
-            break;
-        // 色２（耐久力２）
-        case Level2:
-                r = 0.5f;
-                b = 0.2f;
-            break;
-        // 色３（耐久力１）
-        case Level3:
-                r = 0.3f;
-                b = 0.3f;
-            break;
+                // 色１（耐久力３）
+            case Level1:
+                r1 = 1.f;
+                r2 = r1/2;
+                break;
+                // 色２（耐久力２）
+            case Level2:
+                r1 = 0.5f;
+                r2 = r1/2;
+                b1 = 0.2f;
+                b2 = b1/2;
+                break;
+                // 色３（耐久力１）
+            case Level3:
+                r1 = 0.3f;
+                r2 = r1/2;
+                b1 = 0.3f;
+                b2 = b2/2;
+                break;
         }
-        for (int j=0; j<blockVertexNum; ++j)
-        {
-            g_block_color_buffer_data[i][j] = r;
-            g_block_color_buffer_data[i][++j] = g;
-            g_block_color_buffer_data[i][++j] = b;
-        }
-    }
+        g_block_color_buffer_data[j]   = r1;
+        g_block_color_buffer_data[++j] = g1;
+        g_block_color_buffer_data[++j] = b1;
 
+        g_block_color_buffer_data[++j] = r2;
+        g_block_color_buffer_data[++j] = g2;
+        g_block_color_buffer_data[++j] = b2;
+
+        g_block_color_buffer_data[++j] = r1;
+        g_block_color_buffer_data[++j] = g1;
+        g_block_color_buffer_data[++j] = b1;
+
+        g_block_color_buffer_data[++j] = r0;
+        g_block_color_buffer_data[++j] = g0;
+        g_block_color_buffer_data[++j] = b0;
+
+        g_block_color_buffer_data[++j] = r1;
+        g_block_color_buffer_data[++j] = g1;
+        g_block_color_buffer_data[++j] = b1;
+
+        g_block_color_buffer_data[++j] = r1;
+        g_block_color_buffer_data[++j] = g1;
+        g_block_color_buffer_data[++j] = b1;
+    }
+    
     // バッファオブジェクトへのハンドル
-    GLuint block_color_buffer[BlockTypeMax];
-
-    // 頂点色バッファオブジェクトを作成->頂点色をバッファオブジェクト(OpenGL)に転送
-    for(int i=0;i<BlockTypeMax;++i)
-    {
-        glGenBuffers(1, &block_color_buffer[i]);
-        glBindBuffer(GL_ARRAY_BUFFER, block_color_buffer[i]);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(g_block_color_buffer_data[i]), g_block_color_buffer_data[i], GL_STATIC_DRAW);
-    }
+    GLuint block_color_buffer = arrayBufferHandling(g_block_color_buffer_data, sizeof(g_block_color_buffer_data));
 
     // VAOを解除
     glBindVertexArray(0);
@@ -299,16 +328,11 @@ int main()
          0.2f, -0.9f,                                           0.0f,   // 右下コピー
         -0.2f,(-0.9f+(G_NORMALIZED_PADDLE_HEIGHTSIZE)),         0.0f,   // 左上コピー
     };
-    int pdlVerBufSize = (int)sizeof(g_paddle_vertex_buffer_data)/sizeof(GLfloat);
+//    static int pdlVerBufSize = (int)sizeof(g_paddle_vertex_buffer_data)/sizeof(GLfloat);
+    static int paddleVertexNum = (G_CONFIGURED_TRIANGLE_BLOCK_VERTEXNUM)*(G_COORDINATENUM_XYZ);
     
     // バッファオブジェクトへのハンドル
-    GLuint paddle_position_buffer;
-    // 頂点バッファオブジェクトを作成->頂点位置をバッファオブジェクト(OpenGL)に転送
-    glGenBuffers(1, &paddle_position_buffer);
-    
-    glBindBuffer(GL_ARRAY_BUFFER, paddle_position_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_paddle_vertex_buffer_data), g_paddle_vertex_buffer_data, GL_STATIC_DRAW);
-
+    GLuint paddle_position_buffer = arrayBufferHandling(g_paddle_vertex_buffer_data, sizeof(g_paddle_vertex_buffer_data));
 
     // パドルの色を指定------------------------色----
     GLfloat g_paddle_color_buffer_data[] = {
@@ -321,12 +345,7 @@ int main()
     };
     
     // バッファオブジェクトへのハンドル
-    GLuint paddle_color_buffer;
-    // 頂点色バッファオブジェクトを２個作成->頂点色をバッファオブジェクト(OpenGL)に転送
-    glGenBuffers(1, &paddle_color_buffer);
-    
-    glBindBuffer(GL_ARRAY_BUFFER, paddle_color_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_paddle_color_buffer_data), g_paddle_color_buffer_data, GL_STATIC_DRAW);
+    GLuint paddle_color_buffer = arrayBufferHandling(g_paddle_color_buffer_data, sizeof(g_paddle_color_buffer_data));
 
     // VAOを解除
     glBindVertexArray(0);
@@ -358,12 +377,7 @@ int main()
     }
 
     // バッファオブジェクトへのハンドル
-    GLuint ball_position_buffer;
-    // 頂点色バッファオブジェクトを２個作成->頂点色をバッファオブジェクト(OpenGL)に転送
-    glGenBuffers(1, &ball_position_buffer);
-    
-    glBindBuffer(GL_ARRAY_BUFFER, ball_position_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_ball_vertex_buffer_data), g_ball_vertex_buffer_data, GL_STATIC_DRAW);
+    GLuint ball_position_buffer = arrayBufferHandling(g_ball_vertex_buffer_data, sizeof(g_ball_vertex_buffer_data));
 
     // ボールの色を指定------------------------色----
     GLfloat g_ball_color_buffer_data[ballVertexNum];
@@ -373,12 +387,7 @@ int main()
     }
     
     // バッファオブジェクトへのハンドル
-    GLuint ball_color_buffer;
-    // 頂点色バッファオブジェクトを２個作成->頂点色をバッファオブジェクト(OpenGL)に転送
-    glGenBuffers(1, &ball_color_buffer);
-    
-    glBindBuffer(GL_ARRAY_BUFFER, ball_color_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(g_ball_color_buffer_data), g_ball_color_buffer_data, GL_STATIC_DRAW);
+    GLuint ball_color_buffer = arrayBufferHandling(g_ball_color_buffer_data, sizeof(g_ball_color_buffer_data));
 
     // VAOを解除
     glBindVertexArray(0);
@@ -388,9 +397,14 @@ int main()
     glfwSwapInterval(1);
 
     do{
+        // ***********************************************************
         // ウィンドウ背景色を塗りつぶし
+        // ***********************************************************
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        // ***********************************************************
+        // 描画
+        // ***********************************************************
         // シェーダを使う
         glUseProgram(programID);
 
@@ -411,7 +425,7 @@ int main()
 
         // 最初の属性バッファ：色：ブロック----------
         glEnableVertexAttribArray(vertexColorID);
-        glBindBuffer(GL_ARRAY_BUFFER, block_color_buffer[0]);
+        glBindBuffer(GL_ARRAY_BUFFER, block_color_buffer);
         glVertexAttribPointer(
                               vertexColorID,  // シェーダ内のlayoutと同じID
                               3,                            // サイズ
@@ -420,8 +434,8 @@ int main()
                               0,                            // 属性間を何個飛ばしするかバイトオフセット
                               (void*)0                      // 配列バッファオフセット
                               );
-        // 三角形を描きます！
-        glDrawArrays(GL_LINE_LOOP, 0, G_CONFIGURED_TRIANGLE_BLOCK_VERTEXNUM*G_BLOCK_COLUMN*G_BLOCK_ROW); // 三角形2つからなる６つの頂点＊ブロックの個数
+        // ブロックを描画
+        glDrawArrays(GL_TRIANGLES, 0, G_CONFIGURED_TRIANGLE_BLOCK_VERTEXNUM*G_BLOCK_COLUMN*G_BLOCK_ROW); // 三角形2つからなる６つの頂点＊ブロックの個数
         glDisableVertexAttribArray(vertexPosition_modelspaceID);
         glDisableVertexAttribArray(vertexColorID);
         glBindVertexArray(0);
@@ -449,7 +463,7 @@ int main()
                 const bool isScreenOver = (abs(ptr_paddle[0]+position.x) <= 1.03f) && (abs(ptr_paddle[3]+position.x) <= 1.03f);
                 if(isScreenOver)
                 {
-                    for(int i=0; i<pdlVerBufSize; ++i)
+                    for(int i=0; i<paddleVertexNum; ++i)
                     {
                         ptr_paddle[3*i] += position.x;
                     }
@@ -540,9 +554,14 @@ int main()
 
         
         
-        
+        // ***********************************************************
         // バッファをスワップする。
+        // ***********************************************************
         glfwSwapBuffers(window);
+
+        // ***********************************************************
+        // イベントを取得
+        // ***********************************************************
         glfwPollEvents();
         
     } // ESCキーが押されたかウィンドウが閉じたかをチェックする。
@@ -551,7 +570,7 @@ int main()
     
 	// Cleanup VBO
 	glDeleteBuffers(1, &block_position_buffer);
-	glDeleteBuffers(3, block_color_buffer);
+	glDeleteBuffers(1, &block_color_buffer);
 	glDeleteBuffers(1, &paddle_position_buffer);
 	glDeleteBuffers(1, &paddle_color_buffer);
 	glDeleteBuffers(1, &ball_position_buffer);
@@ -571,5 +590,5 @@ int main()
 
     glfwTerminate();
     
-    return 0;
+    return EXIT_SUCCESS;
 }

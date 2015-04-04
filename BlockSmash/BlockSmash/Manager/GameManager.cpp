@@ -9,9 +9,6 @@
 
 GameManager::GameManager()
 {
-    // ウィンドウの初期化
-    startupWindow();
-    
     // ゲーム全体の各シーンオブジェクトを実体化
 //    m_sceneID = Utility::SCENE_TITLE;
     m_sceneID = Utility::SCENE_INGAME;
@@ -22,15 +19,6 @@ GameManager::GameManager()
     
     // シーンを設定（最初はタイトル画面）
     standbyScene();
-}
-
-int GameManager::startupWindow()
-{
-    if (!glfwInit())
-    {
-        return -1;
-    }
-    return 0;
 }
 
 void GameManager::standbyScene()

@@ -21,12 +21,19 @@ protected:
     PhysicsComponent *m_physicsComp;
     SoundComponent *m_soundComp;
     GraphicsComponent *m_graphicsComp;
+
 };
 
 class Ball : virtual public IngameObject
 {
 public:
     Ball();
+    
+private:
+    int m_x,m_y;
+    int m_width,m_height;
+    int m_dx,m_dy;
+
     int m_speed;
     int m_power;
 };
@@ -35,6 +42,10 @@ class Paddle : virtual public IngameObject
 {
 public:
     Paddle();
+private:
+    int m_x,m_y;
+    int m_width,m_height;
+
     int m_grade;
 };
 
@@ -42,6 +53,10 @@ class Block : virtual public IngameObject
 {
 public:
     Block();
+private:
+    int m_x,m_y;
+    int m_width,m_height;
+
     int m_endurance;
     bool m_fItem;
 };

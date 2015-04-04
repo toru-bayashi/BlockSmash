@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B10E6101ACFE74900F6F732 /* UtilityGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B10E60E1ACFE74900F6F732 /* UtilityGL.cpp */; };
 		6B2503E61A348AAD0076F910 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B2503E51A348AAD0076F910 /* main.cpp */; };
 		6B2503E81A348AAD0076F910 /* BlockSmash.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B2503E71A348AAD0076F910 /* BlockSmash.1 */; };
 		6B2503F31A348AE30076F910 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2503EE1A348AE30076F910 /* Foundation.framework */; };
@@ -53,8 +54,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B10E60E1ACFE74900F6F732 /* UtilityGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UtilityGL.cpp; path = Utility/UtilityGL.cpp; sourceTree = "<group>"; };
+		6B10E60F1ACFE74900F6F732 /* UtilityGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilityGL.h; path = Utility/UtilityGL.h; sourceTree = "<group>"; };
+		6B10E6111ACFECD100F6F732 /* IncludeStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncludeStandard.h; path = Utility/IncludeStandard.h; sourceTree = "<group>"; };
 		6B2503E21A348AAD0076F910 /* BlockSmash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlockSmash; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B2503E51A348AAD0076F910 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6B2503E51A348AAD0076F910 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = BlockSmash/main.cpp; sourceTree = SOURCE_ROOT; };
 		6B2503E71A348AAD0076F910 /* BlockSmash.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BlockSmash.1; sourceTree = "<group>"; };
 		6B2503EE1A348AE30076F910 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B2503EF1A348AE30076F910 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -95,7 +99,7 @@
 		6B2504511A34970D0076F910 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Ingame/Object/Player.h; sourceTree = "<group>"; };
 		6B35E4771A40537E0031EF0C /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shader.cpp; path = Common/shader.cpp; sourceTree = "<group>"; };
 		6B35E4781A40537E0031EF0C /* shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = shader.hpp; path = Common/shader.hpp; sourceTree = "<group>"; };
-		6B35E47D1A405C1F0031EF0C /* SimpleFragmentShader.fragmentshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragmentShader.fragmentshader; sourceTree = "<group>"; };
+		6B35E47D1A405C1F0031EF0C /* SimpleFragmentShader.fragmentshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleFragmentShader.fragmentshader; path = BlockSmash/SimpleFragmentShader.fragmentshader; sourceTree = SOURCE_ROOT; };
 		6B35E47E1A405C1F0031EF0C /* SimpleVertexShader.vertexshader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertexShader.vertexshader; sourceTree = "<group>"; };
 		6B3EFD5C1A3D8286008B6B6B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6B3EFD5E1A3D8291008B6B6B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -104,7 +108,7 @@
 		6BA162551A3D986200B661D7 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../usr/local/lib/libGLEW.a; sourceTree = "<group>"; };
 		6BA162571A3D9CA000B661D7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		6BEE54CE1A34A0FA007A14EB /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utility.cpp; path = Utility/Utility.cpp; sourceTree = "<group>"; };
-		6BEE54CF1A34A0FA007A14EB /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = Utility/Utility.h; sourceTree = "<group>"; };
+		6BEE54CF1A34A0FA007A14EB /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = BlockSmash/Utility/Utility.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,9 @@
 				6BEE54CE1A34A0FA007A14EB /* Utility.cpp */,
 				6BEE54CF1A34A0FA007A14EB /* Utility.h */,
 				6B61B4D11A6C0FDF008B9D10 /* IncludeGLLib.h */,
+				6B10E6111ACFECD100F6F732 /* IncludeStandard.h */,
+				6B10E60E1ACFE74900F6F732 /* UtilityGL.cpp */,
+				6B10E60F1ACFE74900F6F732 /* UtilityGL.h */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 				6B2504521A34970E0076F910 /* Player.cpp in Sources */,
 				6BEE54D01A34A0FA007A14EB /* Utility.cpp in Sources */,
 				6B35E4791A40537E0031EF0C /* shader.cpp in Sources */,
+				6B10E6101ACFE74900F6F732 /* UtilityGL.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +415,7 @@
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					/usr/local/include,
 					"/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/glm-0.9.4.0",
-					/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/,
+					/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/.,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,7 +431,7 @@
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					/usr/local/include,
 					"/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/glm-0.9.4.0",
-					/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/,
+					/Users/wakabayashitooru/BlockSmash/BlockSmash/BlockSmash/.,
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";

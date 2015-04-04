@@ -15,16 +15,16 @@
 //const char *g_sceneStageClearName = "StageClear";
 
 // ブロックの最大個数
-static int G_BLOCK_COLUMN = 15;
-static int G_BLOCK_ROW = 20;
+static int G_BLOCK_COLUMN = 8;
+static int G_BLOCK_ROW = 12;
 
 // ブロックのサイズ
-static int G_BLOCK_WIDTH = 64;
-static int G_BLOCK_HEIGHT = 16;
+static int G_BLOCK_WIDTH = 60;
+static int G_BLOCK_HEIGHT = 20;
 
 // パドルのサイズ
-static int G_PADDLE_WIDTH = 96;
-static int G_PADDLE_HEIGHT = 16;
+static int G_PADDLE_WIDTH = 90;
+static int G_PADDLE_HEIGHT = 15;
 
 // ボールの真円比（480*640における真円比）
 static float G_BALL_CIRCULARITY_RATIO = 1.33f;
