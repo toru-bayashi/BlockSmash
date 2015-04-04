@@ -8,25 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BlockSmash/main.cpp"
-         timestampString = "449836569.298091"
+         timestampString = "449862193.204239"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "682"
-         endingLineNumber = "682"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
          landmarkName = "main()"
-         landmarkType = "7">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "BlockSmash/main.cpp"
-         timestampString = "449836569.298091"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
-         landmarkName = "arrayBufferHandling (const GLfloat *bufferData, unsigned int size)"
          landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>

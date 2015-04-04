@@ -11,6 +11,12 @@
 SceneIngame::SceneIngame()
 {
     m_sceneName = (char *)"BlockSmash";
+    m_player = new Player();
+    m_paddle = new Paddle();
+//    m_ball = new Ball();
+//    m_block = new Block();
+    m_someBalls.resize(1);
+    m_someBlocks.resize(G_BLOCK_COLUMN*G_BLOCK_ROW);
 }
 
 SceneIngame::~SceneIngame()

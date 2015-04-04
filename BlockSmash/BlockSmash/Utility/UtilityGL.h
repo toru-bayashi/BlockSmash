@@ -9,14 +9,20 @@
 #ifndef __BlockSmash__UtilityGL__
 #define __BlockSmash__UtilityGL__
 
-//#include "IncludeStandard.h"
-//#include "IncludeGLLib.h"
-//
-//static GLFWwindow* window = NULL;
-//
-//namespace UtilityGL
-//{
-//    int createWindow(int window_width, int window_height);
-//};
+#include "IncludeStandard.h"
+#include "IncludeGLLib.h"
+#include "BSManager.h"
+#include "Utility.h"
+
+namespace UtilityGL
+{
+    int createWindow(int window_width, int window_height);
+    void render();
+    void ballMover();
+    GLuint arrayBufferHandling (const GLfloat *bufferData, unsigned int size);
+    bool keyboardControl();
+    void bufferFactory();
+    int dummyMain();
+};
 
 #endif /* defined(__BlockSmash__UtilityGL__) */

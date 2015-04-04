@@ -9,9 +9,7 @@
 #ifndef __BlockSmash__GamaManager__
 #define __BlockSmash__GamaManager__
 
-#include <GLFW/glfw3.h>
 #include "Utility.h"
-#include "UtilityGL.h"
 #include "SceneTitle.h"
 #include "SceneIngame.h"
 #include "SceneStageClear.h"
@@ -28,7 +26,7 @@ public:
     SceneStageClear *m_sceneStCl;
     SceneGameOver *m_sceneGmOv;
 private:
-    Utility::SCENE_TYPE m_sceneID;
+    Utility::SCENE_TYPE m_sceneState;
     unsigned char **m_stageMap;
 };
 

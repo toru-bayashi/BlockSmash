@@ -28,8 +28,11 @@ public:
 private:
     Player *m_player;
     Paddle *m_paddle;
-    std::vector<Ball> m_ball;
-    std::vector<Block> m_block;
+    Ball *m_ball;
+    Block *m_block;
+    
+    std::vector<Ball> m_someBalls;
+    std::vector<Block> m_someBlocks;
     Stage *m_stage;
 };
 

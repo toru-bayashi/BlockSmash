@@ -24,6 +24,9 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 using namespace glm;
+
+#include "Common/shader.hpp"
+
 #endif
 
 #endif

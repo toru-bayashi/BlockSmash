@@ -10,8 +10,8 @@
 GameManager::GameManager()
 {
     // ゲーム全体の各シーンオブジェクトを実体化
-//    m_sceneID = Utility::SCENE_TITLE;
-    m_sceneID = Utility::SCENE_INGAME;
+//    m_sceneState = Utility::SCENE_TITLE;
+    m_sceneState = Utility::SCENE_INGAME;
     m_stageMap = nullptr;
 
     // ステージ情報をロード
@@ -23,7 +23,7 @@ GameManager::GameManager()
 
 void GameManager::standbyScene()
 {
-    switch (m_sceneID) {
+    switch (m_sceneState) {
 //        case Utility::SCENE_TITLE:
 //            m_sceneTtl = new SceneTitle();
 //            break;
@@ -48,7 +48,7 @@ void GameManager::standbyScene()
 
 void GameManager::breakScene()
 {
-    switch (m_sceneID) {
+    switch (m_sceneState) {
 //        case Utility::SCENE_TITLE:
 //            delete m_sceneTtl;
 //            break;

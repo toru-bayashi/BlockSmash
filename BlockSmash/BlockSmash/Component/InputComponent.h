@@ -9,5 +9,12 @@
 #ifndef __BlockSmash__InputComponent__
 #define __BlockSmash__InputComponent__
 
+class InputComponent
+{
+public:
+    InputComponent();
+    void keyControl();
+private:
+};
 
 #endif /* defined(__BlockSmash__InputComponent__) */

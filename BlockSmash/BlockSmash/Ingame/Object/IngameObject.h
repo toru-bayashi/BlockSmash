@@ -12,6 +12,7 @@
 #include "PhysicsComponent.h"
 #include "SoundComponent.h"
 #include "GraphicsComponent.h"
+#include "InputComponent.h"
 
 class IngameObject
 {
@@ -21,6 +22,7 @@ protected:
     PhysicsComponent *m_physicsComp;
     SoundComponent *m_soundComp;
     GraphicsComponent *m_graphicsComp;
+    InputComponent *m_inputComp;
 
 };
 
@@ -28,6 +30,8 @@ class Ball : virtual public IngameObject
 {
 public:
     Ball();
+    Ball(const Ball& rBall);
+    ~Ball();
     
 private:
     int m_x,m_y;
@@ -53,6 +57,7 @@ class Block : virtual public IngameObject
 {
 public:
     Block();
+    ~Block();
 private:
     int m_x,m_y;
     int m_width,m_height;

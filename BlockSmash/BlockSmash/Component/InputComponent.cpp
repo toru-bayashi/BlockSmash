@@ -7,3 +7,13 @@
 //
 
 #include "InputComponent.h"
+
+InputComponent::InputComponent()
+{
+    
+}
+
+void keyControl()
+{
+    
+}
